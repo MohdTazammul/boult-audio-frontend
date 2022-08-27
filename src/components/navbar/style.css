@@ -1,0 +1,29 @@
+.slider
+{
+    background: rgb(18,137,159);
+background: linear-gradient(90deg, rgba(18,137,159,1) 0%, rgba(43,203,233,1) 50%, rgba(18,137,159,1) 100%);
+color: white;
+text-align: center;
+width: 100%;
+padding: 8px 0px;
+font-weight: bold;
+font-size: 14px;
+}
+.slider div{
+    animation: sliderAnm 2s linear infinite;
+}
+@keyframes sliderAnm {
+    0%{
+        transform: translateX(0%);
+    }
+    50%
+    {
+        transform: translateX(0%);
+    }
+    75%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
