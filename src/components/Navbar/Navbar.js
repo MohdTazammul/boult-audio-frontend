@@ -13,8 +13,8 @@ function Navbar() {
             <img src='https://user-images.githubusercontent.com/90475607/187048302-c4430181-c367-4a23-a913-871774aa2457.png' />
             </div>
             <div>
-                <p>Shop by category</p>
-                <p>Shop by activity</p>
+                <p>Shop by Category</p>
+                <p>Shop by Activity</p>
                 <p>Support &amp; warranty</p>
                 <p>Contact us</p>
                 <p>Company</p>
