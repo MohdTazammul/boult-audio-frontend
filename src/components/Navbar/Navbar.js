@@ -1,18 +1,37 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
 import "./style.css"
-function Navbar() {
+import { useRef } from 'react';
+import Collapsible from 'react-collapsible';
+function Navbar(props) {
+  console.log(props)
+const mySidepanel = useRef(null);
+// const body = useRef(null);
+  function openNav() {
+    props.props.current.style.filter="blur(5px)";
+    mySidepanel.current.style.width = "250px";
+    mySidepanel.current.style.filter="blur(0px)";
+  }
+  function closeNav() {
+    props.props.current.style.filter="blur(0px)";
+    mySidepanel.current.style.width = "0";
+  }
+
   return (
-    <div>
+    <div >
       <div className='slider'>
         <div>Get 5% OFF upto ₹50 on all UPI Orders</div>
       </div>
       <div id='navbar'>
-        <div className='links'>
+        <div className='links'
+        //  ref={links}
+        >
             <div>
             <img src='https://user-images.githubusercontent.com/90475607/187048302-c4430181-c367-4a23-a913-871774aa2457.png' />
             </div>
-            <div className="navbar-links">
+            <div className="navbar-links" 
+            //  ref={navbarLinks}
+            >
               <div className="dropdown">
                 <button className="dropbtn">Shop by category</button>
                 <div className="dropdown-content">
@@ -59,9 +78,26 @@ function Navbar() {
             </div>
         </div>
         <div className='icons'>
+        
         <button><Icon icon="carbon:search" color="white" /></button>
-        <button><Icon icon="mingcute:user-2-line" color="white" /></button>
-        <button><Icon icon="mingcute:shopping-bag-2-line" color="white" /></button>
+        <button ><Icon icon="mingcute:user-2-line" color="white" /></button>
+        <button ><Icon icon="mingcute:shopping-bag-2-line" color="white" /></button>
+        <button className="openbtn" onClick={openNav}><Icon icon="charm:menu-hamburger" color="white" /></button>
+        <div id="mySidepanel" ref={mySidepanel} className="sidepanel">
+          <a href="#" className="closebtn" onClick={closeNav}>×</a>
+          <a><Collapsible trigger="Shop by category">
+                  <p>True Wireless</p>
+                  <p>Neckband</p>
+                  <p>Headphones</p>
+                  <p>Wired</p>
+                  <p>Speakers</p>
+                  <p>Smart Watches</p>
+              </Collapsible></a>
+          <a href="#">Services</a>
+          <a href="#">Clients</a>
+          <a href="#">Contact</a>
+        </div>
+
         </div>
       </div>
     </div>
