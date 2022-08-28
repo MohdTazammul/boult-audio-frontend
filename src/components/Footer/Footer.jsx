@@ -3,16 +3,17 @@ import "./style.css"
 import {TextField} from '@mui/material'
 export default function Footer() {
   return (
+    <>
     <div id='footer-main'>
       <div id='first'>
         <div>
-          <div style={{height:"60%"}}>
+          <div id='first-one'>
             <h2 id='top-one'>We won't spam you.</h2>
             <p style={{color:"#121212BF"}}>but for every mail we send, get a</p>
             <h2><span style={{color:'#45BED5'}}>Deal</span> with it</h2>
           </div>
-          <div style={{height:"38%"}}>
-            <TextField style={{width:"90%",marginLeft:"6%"}} id="outlined-basic" label="Email" variant="standard" />
+          <div id='first-two'>
+            <TextField style={{width:"90%",marginLeft:"6%",paddingLeft:"0px"}} id="outlined-basic" label="Email" variant="standard" />
             <button id='footer-first-btn'>Submit</button>
           </div>
         </div>
@@ -64,5 +65,20 @@ export default function Footer() {
         </div>
       </div>
     </div>
+    <div>
+        <div id='icon-grid'>
+          <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/facebook-icon.png?v=1638472503" alt="" />
+          <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/twitter-icon.png?v=1638472503" alt="" />
+          <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/instagram-icon.png?v=1638472503" alt="" />
+          <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/youtube-icon.png?v=1638472503" alt="" />
+          <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/linkedin-icon.png?v=1638472503" alt="" />
+        </div>
+        <div>
+          <p style={{fontSize:"12px"}}>Terms & Conditions** | Privacy Policy | Site map | E-Waste Management | Social Responsibility</p>
+          <p style={{fontSize:"12px"}}>* 8th mobility accessories excellence award, 2021</p>
+          <p style={{fontSize:"12px"}}>© 2022, Boult Audio. All Rights Reserved</p>
+        </div>
+      </div>
+  </>
   )
 }
