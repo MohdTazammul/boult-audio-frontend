@@ -1,0 +1,63 @@
+#footer-main{
+    width: 90vw;
+    height: 400px;
+    display: flex;
+    margin: auto;
+    text-align: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#footer-main> #first{
+    background-image: url("https://cdn.shopify.com/s/files/1/0548/8849/7221/files/footer-newsletter-bg.jpg?v=1638470569");
+    border-radius: 8%;
+    box-shadow: 3px 3px 1px #dadbdd;
+    width: 30%;
+    height: 100%;
+}
+#footer-main> #second{
+    width: 70%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1% 5%;
+    line-height: 8px;
+}
+
+#footer-main> #second>div{
+    margin: 0;
+    padding: 0;
+}
+#footer-first-btn{
+    margin-left: 10%;
+    margin-top: 8%;
+    border: none;
+    background: none;
+    width: 80%;
+    height: 40%;
+    border-radius: 30px;
+    box-shadow: 0.4rem 0.4rem 0.7rem #c1c1c1, -0.3rem -0.3rem 0.6rem #ffffff;
+}
+#footer-first-btn:hover{
+    background: #45BED5;
+}
+#outlined-basic{
+    margin-left: 200px;
+    width: 80%;
+    margin: auto;
+}
+#first>div{
+    width: 90%;
+    height: 80%;
+    margin: 10% auto;
+}
+#first h2{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 29px;
+    color: #181818;
+    letter-spacing: 0;
+    font-family: 'Gotham-Black';
+}
+#first p{
+    line-height: 1;
+    font-size: 17px;
+}
