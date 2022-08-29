@@ -12,7 +12,7 @@ const body = useRef(null);
     <Navbar props={body} />
     <div className="App" ref={body}>
       <TWS />
-     {/* <Footer /> */}
+     <Footer />
     </div>
     </>
   );
