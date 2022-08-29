@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import {useRef} from "react";
+import TWS from './components/TWS/TWS';
 function App() {
   
 const body = useRef(null);
@@ -10,6 +11,7 @@ const body = useRef(null);
     <>
     <Navbar props={body} />
     <div className="App" ref={body}>
+      <TWS />
      {/* <Footer /> */}
     </div>
     </>
