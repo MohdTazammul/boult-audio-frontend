@@ -45,7 +45,10 @@ function TWS() {
                         return (
                            
                             //    <FadeInSection>
-                                    <div key={i}  id={"prod-"+i} style={{backgroundImage: `url(${el.cover_image})`}}>
+                                    <div key={i}  id={"prod-"+i} >
+                                       <FadeInSection>
+                                           <img src={el.cover_image} />
+                                       <div key={i} style={{backgroundImage: `url(${el.cover_image})`}}>
                                         <div className='left'>
                                             <div>{el.productModel}</div>
                                             {el.tagline ?<div>{el.tagline}</div>:""}
@@ -60,6 +63,8 @@ function TWS() {
                                                     })
                                                }
                                         </div>
+                                        </div>
+                                       </FadeInSection>
                                     </div>
                             //    </FadeInSection>
                                    

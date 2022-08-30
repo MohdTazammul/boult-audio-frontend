@@ -88,13 +88,15 @@
     ;
     gap: 2vw 1.5vw;
 }
-.product-container > div
+.product-container img
 {
     /* border: 1px solid red; */
 height: 27vw;
-overflow: hidden;
+width: 100%;
+/* overflow: hidden; */
 background-repeat: no-repeat;
-background-size: cover;
+background-size:contain;
+object-fit: cover;
 border-radius: 4vw;
 background-position: center center;
 position: relative;
@@ -217,7 +219,7 @@ background: linear-gradient(90deg, rgba(73,141,205,1) 0%, rgba(153,211,247,1) 50
         ;
         /* gap: 2vw 1.5vw; */
     }
-    .product-container > div
+    .product-container img
     {
         height: 40vw;
     }
