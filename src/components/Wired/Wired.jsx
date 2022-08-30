@@ -35,6 +35,19 @@ function Wired() {
                 </div>
             </FadeInSection>
             <FadeInSection>
+                <div className='features-section'>
+                <div style={{backgroundImage:`url(https://user-images.githubusercontent.com/90475607/187527761-694231cb-33d7-4b44-8c2b-c475319d4ff9.png)`}}>
+                        <p>Snug-fit silicon earbuds</p>
+                    </div>
+                    <div style={{backgroundImage:`url(https://user-images.githubusercontent.com/90475607/187527767-4238964e-00a4-4101-beff-0ab3929acde6.png)`}}>
+                            <p>Tangle-free Kevlar cable</p>
+                        </div>
+                        <div style={{backgroundImage:`url(https://user-images.githubusercontent.com/90475607/187527764-00424170-c89d-4192-8aa3-d21cfb4c08cd.png)`}}>
+                            <p>Easy in-line controls</p>
+                        </div>
+                </div>
+            </FadeInSection>
+            <FadeInSection>
                 <div className='sub-heading'>All wired</div>
             </FadeInSection>
             <div className='product-container'>

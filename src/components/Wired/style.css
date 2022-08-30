@@ -167,6 +167,45 @@ background: linear-gradient(90deg, rgba(73,141,205,1) 0%, rgba(153,211,247,1) 50
 -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
     }
+    .wired .features-section > div:nth-child(1)
+    {
+        grid-area: fs-a;
+    }
+    .wired .features-section > div:nth-child(2)
+    {
+        grid-area: fs-b;
+    }
+    .wired .features-section > div:nth-child(3)
+    {
+        grid-area: fs-c;
+    }
+    .wired .features-section
+    {
+        width: 100%;
+        display: grid;
+        grid-template-areas: "fs-a fs-a fs-b fs-c";
+        gap: 1.5vw;
+        margin: 4vw 0vw;
+    }
+    .wired .features-section > div{
+        height: 25vw;
+        background-repeat: no-repeat;
+        background-size:cover;
+        border-radius: 4vw;
+        background-position: center center;
+        position: relative;
+    }
+    .wired .features-section p{
+       position: absolute;
+       top: 50%;
+       width: 100%;
+       text-align: center;
+       transform: translateY(-80%);
+       box-sizing: border-box;
+       padding: 0px 1vw;
+        color: white;
+        font-size: 2.3vw;
+    }
 @media only screen and (max-width: 850px)
 {
     .wired  .desktop{
@@ -222,5 +261,17 @@ background: linear-gradient(90deg, rgba(73,141,205,1) 0%, rgba(153,211,247,1) 50
     .wired  .left div:nth-child(2)
     {
         font-size: 2.5vw;
+    }
+    .wired .features-section
+    {
+        grid-template-areas: "fs-a fs-a" "fs-b fs-c";
+        margin: 2vw 0vw;
+    }
+    .wired .features-section > div{
+        height: 40vw;
+    }
+    .wired .features-section p
+    {
+        font-size: 3.5vw;
     }
 }
