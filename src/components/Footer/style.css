@@ -1,6 +1,5 @@
 #footer-main{
     width: 90vw;
-    height: 55vh;
     display: flex;
     margin: 50px auto ;
     text-align: left;
@@ -20,7 +19,7 @@
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 1% 5%;
-    line-height: 8px;
+    line-height: 16px;
 }
 
 #footer-main> #second>div{
@@ -33,7 +32,7 @@
     border: none;
     background: none;
     width: 80%;
-    height: 40%;
+    height: 45px;
     border-radius: 30px;
     box-shadow: 0.4rem 0.4rem 0.7rem #c1c1c1, -0.3rem -0.3rem 0.6rem #ffffff;
 }

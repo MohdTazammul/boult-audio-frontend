@@ -1,21 +1,37 @@
 import React from 'react';
 import "./style.css"
+import { Icon } from '@iconify/react';
 const Userprofile = () => {
     return (
         <>
             <div id='user-main'>
                 <div  id='user-main-first'>
                     <div id='details'>
-                        <div>Your Profile</div>
-                        <div>Your Order</div>
-                        <div>Log out</div>
+                        <div style={{display:"flex"}}>
+                            <Icon icon="mingcute:user-2-line" color="black" fontSize="24px"/>
+                             Your Profile</div>
+                        <div>
+                            <Icon icon="emojione-monotone:wrapped-gift" fontSize="24px"/>
+                            Your Order
+                        </div>
+                        <div>
+                            <Icon icon="bx:lock" fontSize="24px"/>
+                            Log out
+                        </div>
                     </div>
                 </div>
                 <div  id='user-main-second'>
                     <div id='user'>
-                        <div id='one'> Your Profile</div>
-                        <div id='two'>Ankit Mungole</div>
-                        <div id='three'>addrrece</div>
+                        <div id='one'>
+                            <h2>User Profile</h2>
+                        </div>
+                        <div id='two'>
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/profile-user-icon.png?v=1645163243" alt="" />
+                                <h2>Ankit Mungole</h2>
+                            </div>
+                        </div>
+                        <div id='three'><h2>addrrece</h2></div>
                     </div>
                 </div>
             </div>
