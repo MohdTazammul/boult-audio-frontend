@@ -16,8 +16,13 @@
     "react": "^18.2.0",
     "react-collapsible": "^2.10.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
+=======
+    "react-redux": "^8.0.2",
+>>>>>>> ceafa23bf7ac993c79168a7214c04a8589601459
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
