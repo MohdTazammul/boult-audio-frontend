@@ -1,19 +1,19 @@
-.headphones
+.speaker
 {
     text-align: left;
     background-color: #F4F4F4;
     padding-bottom: 4vw;
 }
-.headphones .mobile
+.speaker .mobile
 {
     display: none;
 }
-.headphones  .header
+.speaker  .header
 {
     position: relative;
     z-index: 0;
 }
-.headphones .thumbnail-heading
+.speaker .thumbnail-heading
 {
     position: absolute;
     width: 20%;
@@ -24,12 +24,12 @@
     line-height: 1.2;
     font-weight: bold;
 }
-.headphones  .main-container
+.speaker  .main-container
 {
     width: 80%;
     margin: auto;
 }
-.headphones .section-2
+.speaker .section-2
 {
     background: white;
     border-radius: 3vw;
@@ -43,13 +43,13 @@
     z-index: 2;
 }
 
-.headphones  .section-2 > div:nth-child(1) > div:nth-child(1)
+.speaker  .section-2 > div:nth-child(1) > div:nth-child(1)
 {
     font-weight: bold;
     font-size: 4vw;
     line-height: 1.1;
 }
-.headphones  .section-2 > div:nth-child(1) > div:nth-child(2)
+.speaker  .section-2 > div:nth-child(1) > div:nth-child(2)
 {
     color: #4D4D4D;
     padding: 2.5vw 0px 0.5vw 0px;
@@ -57,16 +57,16 @@
     line-height: 1.7;
     letter-spacing: 0.5px;
 }
-.headphones  .section-2 > div:nth-child(2)
+.speaker  .section-2 > div:nth-child(2)
 {
     text-align: center;
 }
-.headphones  .section-2 > div:nth-child(2) img
+.speaker  .section-2 > div:nth-child(2) img
 {
     width: 60%;
     margin-top: -5vw;
 }
-.headphones  .sub-heading
+.speaker  .sub-heading
 {
     text-transform:capitalize;
     font-weight: 700;
@@ -75,16 +75,15 @@
     font-size: 1.7vw;
     letter-spacing: 1.5px;
 }
-.headphones  .product-container
+.speaker  .product-container
 {
     width: 100%;
     display: grid;
     grid-template-areas: 
-    "a a b b"
-    "c e d d";
+    "a b";
     gap: 2vw 1.5vw;
 }
-.headphones  .product-container img
+.speaker  .product-container img
 {
     /* border: 1px solid red; */
 height: 27vw;
@@ -101,16 +100,9 @@ position: relative;
 /* .product-container img{
     width: 100%;
 } */
-.headphones #prod-0{grid-area: a;}
-.headphones #prod-1{grid-area: b;}
-.headphones #prod-2{grid-area: c;}
-.headphones #prod-3{grid-area: d;}
-.headphones #prod-4{grid-area: e;}
-.headphones #prod-5{grid-area: f;}
-.headphones #prod-6{grid-area: g;}
-.headphones #prod-7{grid-area: h;}
-
-.headphones  .left
+.speaker #prod-0{grid-area: a;}
+.speaker #prod-1{grid-area: b;}
+.speaker  .left
 {
     position: absolute;
     bottom: 2.5vw;
@@ -124,26 +116,26 @@ position: relative;
     border-radius: 10px;
     line-height: 1.5;
 }
-.headphones .left div:nth-child(1)
+.speaker .left div:nth-child(1)
 {
     font-weight: bold;
     font-size: 1.5vw;
 }
-.headphones .left div:nth-child(2)
+.speaker .left div:nth-child(2)
 {
     font-size: 1.1vw;
 }
-.headphones  .left div:nth-child(3)
+.speaker  .left div:nth-child(3)
 {
     font-weight: bold;
     letter-spacing: 1px;
 }
-.headphones  .left > div:nth-child(3) > span:nth-child(1)
+.speaker  .left > div:nth-child(3) > span:nth-child(1)
 {
     color:#333333;
     text-decoration: line-through;
 }
-.headphones  .right
+.speaker  .right
 {
     position: absolute;
     bottom: 2.5vw;
@@ -155,69 +147,69 @@ position: relative;
     flex-direction: column;
     gap: 5px;
 }
-.headphones .right > div {
+.speaker .right > div {
     height: 15px;
     width: 15px;
     border-radius: 50%;
     border: 0.2vw solid white;
 } 
-@media only screen and (max-width: 850px)
-{
-    .headphones  .desktop{
-        display: none;
-    }
-    .headphones  .mobile{
-        display: block;
-    }
-    .headphones  .main-container
-    {
-        width: 90%;
-    }
-    .headphones  .thumbnail-heading
-    {
-        top:75%;
-    }
-    .headphones .strings-attached
+.speaker .strings-attached
     {
         background: rgb(73,141,205);
 background: linear-gradient(90deg, rgba(73,141,205,1) 0%, rgba(153,211,247,1) 50%, rgba(73,141,205,1) 100%);
 -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
     }
-    .headphones  .section-2 > div:nth-child(1) > div:nth-child(1)
+  
+@media only screen and (max-width: 850px)
+{
+    .speaker  .desktop{
+        display: none;
+    }
+    .speaker  .mobile{
+        display: block;
+    }
+    .speaker  .main-container
+    {
+        width: 90%;
+    }
+    .speaker  .thumbnail-heading
+    {
+        top:75%;
+    }
+    
+    .speaker  .section-2 > div:nth-child(1) > div:nth-child(1)
     {
         font-size: 6vw;
     }
-    .headphones .section-2 > div:nth-child(1) > div:nth-child(2)
+    .speaker .section-2 > div:nth-child(1) > div:nth-child(2)
     {
         font-size: 3vw;
     }
-    .headphones  .section-2 > div:nth-child(2) img
+    .speaker  .section-2 > div:nth-child(2) img
     {
         width: 80%;
     }
-    .headphones .sub-heading
+    .speaker .sub-heading
     {
         font-size: 4vw;
     }
-    .headphones .product-container
+    .speaker .product-container
     {
         grid-template-areas: 
-        "a a"
-        "b b"
-        "c e"
-        "d d"
+        "a"
+        "b"
         ;
     }
-    .headphones .product-container img
+    .speaker .product-container img
     {
-        height: 40vw;
+        height: 50vw;
     }
-    .headphones  .left div:nth-child(1)
+    .speaker  .left div:nth-child(1)
     {
         font-size: 3vw;
     }
-    .headphones  .left div:nth-child(2)
+    .speaker  .left div:nth-child(2)
     {
         font-size: 2.5vw;
     }

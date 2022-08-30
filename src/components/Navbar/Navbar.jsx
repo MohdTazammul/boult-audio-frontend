@@ -42,10 +42,10 @@ const mySidepanel = useRef(null);
                 <div className="dropdown-content">
                   <a onClick={()=>navigate("/tws")}>True Wireless</a>
                   <a onClick={()=>navigate("/neckband")}>Neckband</a>
-                  <a onClick={()=>navigate("/headphones")} href="#">Headphones</a>
-                  <a onClick={()=>navigate("/wired")} href="#">Wired</a>
-                  <a href="#">Speakers</a>
-                  <a href="#">Smart Watches</a>
+                  <a onClick={()=>navigate("/headphones")} >Headphones</a>
+                  <a onClick={()=>navigate("/wired")} >Wired</a>
+                  <a onClick={()=>navigate("/speaker")} >Speakers</a>
+                  <a onClick={()=>navigate("/smart-watches")}>Smart Watches</a>
                 </div>
               </div>
               <div className="dropdown">
