@@ -14,6 +14,7 @@ import HeadphonePage from './Pages/HeadphonePage';
 import WiredPage from './Pages/WiredPage';
 import Flip from './components/Flipper/Flip';
 import SpeakerPage from './Pages/SpeakerPage';
+import Error404 from './Pages/Error404';
 function App() {
 
   const body = useRef(null);
@@ -30,7 +31,7 @@ function App() {
           <Route path='/user' element={<User />} />
           <Route path='/' element={<Home />} />
           <Route path="/Flip" element={<Flip />} />
-          <Route path='*' element={<h1>No Route found</h1>} />
+          <Route path='*' element={<Error404 />} />
           <Route path='/speaker' element={<SpeakerPage />} />
         </Routes>
       </div>
