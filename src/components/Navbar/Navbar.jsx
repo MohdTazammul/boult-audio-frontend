@@ -43,7 +43,7 @@ const mySidepanel = useRef(null);
                   <a onClick={()=>navigate("/tws")}>True Wireless</a>
                   <a onClick={()=>navigate("/neckband")}>Neckband</a>
                   <a onClick={()=>navigate("/headphones")} href="#">Headphones</a>
-                  <a href="#">Wired</a>
+                  <a onClick={()=>navigate("/wired")} href="#">Wired</a>
                   <a href="#">Speakers</a>
                   <a href="#">Smart Watches</a>
                 </div>

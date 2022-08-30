@@ -9,6 +9,7 @@ import TrueWireless from './Pages/TrueWireless';
 import User from './Pages/User';
 import NeckbandPage from './Pages/NeckbandPage';
 import HeadphonePage from './Pages/HeadphonePage';
+import WiredPage from './Pages/WiredPage';
 function App() {
   
 const body = useRef(null);
@@ -20,6 +21,7 @@ const body = useRef(null);
         <Route path='/tws' element={<TrueWireless/>}/>
         <Route path='/neckband' element={<NeckbandPage/>}/>
         <Route path='/headphones' element={<HeadphonePage/>}/>
+        <Route path='/wired' element={<WiredPage />}/>
         <Route path='/user' element={<User/>}/>
       </Routes>
     </div>
