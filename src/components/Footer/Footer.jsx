@@ -74,7 +74,7 @@ export default function Footer() {
           <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/linkedin-icon.png?v=1638472503" alt="" />
         </div>
         <div>
-          <p style={{fontSize:"12px"}}>Terms & Conditions** | Privacy Policy | Site map | E-Waste Management | Social Responsibility</p>
+          <p style={{fontSize:"12px"}}>Terms &amp; Conditions** | Privacy Policy | Site map | E-Waste Management | Social Responsibility</p>
           <p style={{fontSize:"12px"}}>* 8th mobility accessories excellence award, 2021</p>
           <p style={{fontSize:"12px"}}>© 2022, Boult Audio. All Rights Reserved</p>
         </div>

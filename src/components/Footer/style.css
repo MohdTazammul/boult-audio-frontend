@@ -86,6 +86,7 @@
     }
     #footer-main{
         width: 100vw;
+        height: auto;
         flex-direction: column;
     }
     #footer-main> #first{
