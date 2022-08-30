@@ -90,13 +90,13 @@ const mySidepanel = useRef(null);
         <button className="openbtn" onClick={openNav}><Icon icon="charm:menu-hamburger" color="white" /></button>
         <div id="mySidepanel" ref={mySidepanel} className="sidepanel">
           <a href="#" className="closebtn" onClick={closeNav}>×</a>
-          <a><Collapsible trigger="Shop by category">
-                  <p>True Wireless</p>
-                  <p>Neckband</p>
-                  <p>Headphones</p>
-                  <p>Wired</p>
-                  <p>Speakers</p>
-                  <p>Smart Watches</p>
+          <a><Collapsible trigger="Shop by category" >
+                  <div className='sub-links' onClick={()=>{closeNav(); navigate("/tws")}}>True Wireless</div>
+                  <div className='sub-links' onClick={()=>{closeNav(); navigate("/neckband")}}>Neckband</div>
+                  <div className='sub-links' onClick={()=>{closeNav(); navigate("/headphones")}}>Headphones</div>
+                  <div className='sub-links' onClick={()=>{closeNav(); navigate("/wired")}}>Wired</div>
+                  <div className='sub-links' onClick={()=>{closeNav(); navigate("/speaker")}}>Speakers</div>
+                  <div className='sub-links' onClick={()=>{closeNav(); navigate("/smart-watches")}}>Smart Watches</div>
               </Collapsible></a>
           <a href="#">Services</a>
           <a href="#">Clients</a>

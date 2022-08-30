@@ -203,7 +203,13 @@ z-index: 6;
     right: 25px;
     font-size: 36px;
   }
-  
+  .sidepanel .sub-links{
+    font-size: 14px;
+    /* color: white; */
+    background-color: rgb(24, 23, 23);
+    padding: 5px 10px;
+    margin: 5px 10px;
+  }
   .openbtn {
       display: none;
     font-size: 20px;
@@ -236,4 +242,5 @@ z-index: 6;
     .openbtn {
         display: block;
     }
+    
   }
