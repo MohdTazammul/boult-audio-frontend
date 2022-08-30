@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import FadeInSection from '../FadeAnimation/FadeInSection'
-import "../GlobalCSS/productsPageStyle.css"
+
 import "./style.css"
 
 function TWS() {
@@ -13,7 +13,7 @@ function TWS() {
         fetch("https://boult.herokuapp.com/product/TWS").then(resp=>resp.json()).then(data=>setTwsProducts(data))
     }, [])
     return (
-        <div className='outer-cont'>
+        <div className='TWS'>
             <div className='header'>
                 <img className='desktop' src='https://user-images.githubusercontent.com/90475607/187294777-1ef4c905-6cd4-45b7-bab2-3d96a606b647.png' width={"100%"} />
                 <img className='mobile' src='https://user-images.githubusercontent.com/90475607/187295584-c1ee0b61-22f9-4640-9f22-2d0e0723c617.png' width={"100%"} />

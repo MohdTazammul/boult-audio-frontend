@@ -8,6 +8,7 @@ import {Route,Routes} from 'react-router-dom'
 import TrueWireless from './Pages/TrueWireless';
 import User from './Pages/User';
 import NeckbandPage from './Pages/NeckbandPage';
+import HeadphonePage from './Pages/HeadphonePage';
 function App() {
   
 const body = useRef(null);
@@ -18,6 +19,7 @@ const body = useRef(null);
       <Routes>
         <Route path='/tws' element={<TrueWireless/>}/>
         <Route path='/neckband' element={<NeckbandPage/>}/>
+        <Route path='/headphones' element={<HeadphonePage/>}/>
         <Route path='/user' element={<User/>}/>
       </Routes>
     </div>
