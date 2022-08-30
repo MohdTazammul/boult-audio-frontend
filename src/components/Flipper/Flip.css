@@ -1,0 +1,41 @@
+.Container{
+    width: 300px;
+    height: 400px;
+    position: relative; 
+    margin: auto;
+}
+.Card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.Front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-image: url("https://cdn.pixabay.com/photo/2022/08/19/09/05/volcano-7396466_960_720.jpg");
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.Back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: linear-gradient(rgb(10, 194, 145), rgb(12, 144, 205));
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.Card:hover{
+    transform: rotateY(180deg);
+}
