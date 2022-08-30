@@ -41,7 +41,7 @@ const mySidepanel = useRef(null);
                 <button className="dropbtn">Shop by category</button>
                 <div className="dropdown-content">
                   <a onClick={()=>navigate("/tws")}>True Wireless</a>
-                  <a href="#">Neckband</a>
+                  <a onClick={()=>navigate("/neckband")}>Neckband</a>
                   <a href="#">Headphones</a>
                   <a href="#">Wired</a>
                   <a href="#">Speakers</a>

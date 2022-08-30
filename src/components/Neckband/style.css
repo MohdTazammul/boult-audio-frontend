@@ -1,0 +1,29 @@
+.outer-cont .thumbnail-heading
+{
+    top: 35%;
+}
+
+.outer-cont  .product-container
+{
+    grid-template-areas: 
+    "a a a"
+    "b c d"
+    ;
+}
+
+@media only screen and (max-width: 850px)
+{
+    .outer-cont  .thumbnail-heading
+    {
+        top:75%;
+    }
+    .outer-cont .product-container
+    {
+        grid-template-areas: 
+        "a a"
+        "b b"
+        "c c"
+        "d d"
+        ;
+    }
+}
