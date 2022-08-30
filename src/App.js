@@ -7,6 +7,7 @@ import Userprofile from './components/User/Userprofile';
 import {Route,Routes} from 'react-router-dom'
 import TrueWirless from './Pages/TrueWirless';
 import User from './Pages/User';
+import Home from "./Pages/Home"
 function App() {
   
 const body = useRef(null);
@@ -17,6 +18,7 @@ const body = useRef(null);
       <Routes>
         <Route path='/tws' element={<TrueWirless/>}/>
         <Route path='/user' element={<User/>}/>
+        <Route path='/' element={<Home/>}/>
       </Routes>
     </div>
     </>
