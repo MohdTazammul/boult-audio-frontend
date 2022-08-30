@@ -36,6 +36,9 @@
     align-items: center;
     font-size: 30px;
 }
-.Card:hover{
+.Card-flip{
     transform: rotateY(180deg);
+}
+.Card-flip2{
+    transform: rotateY(0deg);
 }
