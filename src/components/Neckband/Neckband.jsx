@@ -5,39 +5,39 @@ import FadeInSection from '../FadeAnimation/FadeInSection'
 
 import "./style.css"
 
-function TWS() {
+function Neckband() {
 
     const [twsProducts, setTwsProducts] = useState([]);
 
     useEffect(()=>{
-        fetch("https://boult.herokuapp.com/product/TWS").then(resp=>resp.json()).then(data=>setTwsProducts(data))
+        fetch("https://boult.herokuapp.com/product/Neckband").then(resp=>resp.json()).then(data=>setTwsProducts(data))
     }, [])
     return (
-        <div className='TWS'>
+        <div className='neckband'>
             <div className='header'>
-                <img className='desktop' src='https://user-images.githubusercontent.com/90475607/187294777-1ef4c905-6cd4-45b7-bab2-3d96a606b647.png' width={"100%"} />
-                <img className='mobile' src='https://user-images.githubusercontent.com/90475607/187295584-c1ee0b61-22f9-4640-9f22-2d0e0723c617.png' width={"100%"} />
+                <img className='desktop' src='https://user-images.githubusercontent.com/90475607/187380837-2c9b676b-b313-43dd-bdf6-80a1e7009bb3.png' width={"100%"} />
+                <img className='mobile' src='https://user-images.githubusercontent.com/90475607/187380829-2a700901-54df-4ba0-afe6-8a9f96892ee2.png' width={"100%"} />
 
-                <div className='thumbnail-heading'><FadeInSection>True Wireless</FadeInSection></div>
+                <div className='thumbnail-heading'><FadeInSection>Neckband</FadeInSection></div>
             </div>
            <div className='main-container'>
            <FadeInSection>
                 <div className='section-2'>
                     <div>
-                        <div>Sound is best enjoyed with no <span className='strings-attached'>strings attached</span></div>
+                        <div>The band everyone <span className='strings-attached'>headbangs to!</span></div>
                         <div>
-                            Truly wireless EarPods are designed in a manner that you want your hands on it, but don't need hands for it. Their noise cancelling &amp; minimal design allow for smooth calls, high-fidelity acoustics &amp; a secure fit.
+                        Neckbands have one foot in the future &amp; another in the vintage times. With a wireless built &amp; a cushiony neckband, it makes its presence felt to others, but never to its user. It allows you to give it your all without worrying about it falling off. Take calls and shuffle between playlists when on the move.
                         </div>
                     </div>
                     <FadeInSection>
                         <div>
-                            <img src='https://user-images.githubusercontent.com/90475607/187295580-3ef102ca-eec3-4e6c-a970-4499e10a3620.png' />
+                            <img src='https://user-images.githubusercontent.com/90475607/187380825-9f530c40-92ea-4af1-bb49-77f96123b1ce.png' />
                         </div>
                     </FadeInSection>
                 </div>
             </FadeInSection>
             <FadeInSection>
-                <div className='sub-heading'>All true wireless</div>
+                <div className='sub-heading'>All neckbands</div>
             </FadeInSection>
             <div className='product-container'>
                 
@@ -77,4 +77,4 @@ function TWS() {
     )
 }
 
-export default TWS
+export default Neckband

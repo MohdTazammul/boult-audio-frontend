@@ -3,7 +3,12 @@ import { Icon } from '@iconify/react';
 import "./style.css"
 import { useRef } from 'react';
 import Collapsible from 'react-collapsible';
+import {useNavigate} from "react-router-dom"
+
 function Navbar(props) {
+
+  const navigate = useNavigate();
+
   console.log(props)
 const mySidepanel = useRef(null);
 // const body = useRef(null);
@@ -35,9 +40,9 @@ const mySidepanel = useRef(null);
               <div className="dropdown">
                 <button className="dropbtn">Shop by category</button>
                 <div className="dropdown-content">
-                  <a href="#">True Wireless</a>
-                  <a href="#">Neckband</a>
-                  <a href="#">Headphones</a>
+                  <a onClick={()=>navigate("/tws")}>True Wireless</a>
+                  <a onClick={()=>navigate("/neckband")}>Neckband</a>
+                  <a onClick={()=>navigate("/headphones")} href="#">Headphones</a>
                   <a href="#">Wired</a>
                   <a href="#">Speakers</a>
                   <a href="#">Smart Watches</a>
