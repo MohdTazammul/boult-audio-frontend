@@ -13,7 +13,7 @@ position: relative;
 z-index: 6;
 }
 .slider div{
-    animation: sliderAnm 2s linear infinite;
+    /* animation: sliderAnm 2s linear infinite; */
 }
 @keyframes sliderAnm {
     0%{
@@ -34,7 +34,7 @@ z-index: 6;
 {
     background-color: rgba(34, 34, 34, 0.9);
     color: #CACACA;
-    width: 100vw;
+    width: 100%;
     padding: 0px 3rem;
     display: flex;
     justify-content: space-between;
