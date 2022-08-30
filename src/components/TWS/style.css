@@ -115,15 +115,54 @@ position: relative;
 .left
 {
     position: absolute;
-    bottom: 3vw;
-    left: 3vw;
+    bottom: 2.5vw;
+    left: 2.2vw;
     /* height: 20px; */
-    width: 30%;
-    color: white;
-    /* border: 1px solid red; */
+    /* width: 60%; */
+    max-width: 48%;
+    color: rgb(37, 37, 37);
+    background: rgb(196, 196, 196, 0.6);
+    padding: 0.7vw;
+    border-radius: 10px;
+    line-height: 1.5;
 }
-
-
+.left div:nth-child(1)
+{
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+.left div:nth-child(2)
+{
+    font-size: 1.1vw;
+}
+.left div:nth-child(3)
+{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.left > div:nth-child(3) > span:nth-child(1)
+{
+    color:#333333;
+    text-decoration: line-through;
+}
+.right
+{
+    position: absolute;
+    bottom: 2.5vw;
+    right: 2.2vw;
+    background: rgba(189, 189, 189, 0.8);
+    padding:  15px 10px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.right > div {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 0.2vw solid white;
+} 
 @media only screen and (max-width: 850px)
 {
     .desktop{
@@ -182,4 +221,13 @@ background: linear-gradient(90deg, rgba(73,141,205,1) 0%, rgba(153,211,247,1) 50
     {
         height: 40vw;
     }
+    .left div:nth-child(1)
+{
+    font-size: 3vw;
+}
+.left div:nth-child(2)
+{
+    font-size: 2.5vw;
+}
+
 }

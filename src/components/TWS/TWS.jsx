@@ -49,10 +49,16 @@ function TWS() {
                                         <div className='left'>
                                             <div>{el.productModel}</div>
                                             {el.tagline ?<div>{el.tagline}</div>:""}
-                                            <div>{el.price}</div>
+                                            <div><span>&#8377;{el.price}</span> {el.discountedPrice!="" ?<span>&#8377;{el.discountedPrice}</span>:""}</div>
                                         </div>
                                         <div className='right'>
-
+                                               {
+                                                    el.colorName.map(color=>{
+                                                        return (
+                                                            <div style={{background:color}}></div>
+                                                        )
+                                                    })
+                                               }
                                         </div>
                                     </div>
                             //    </FadeInSection>

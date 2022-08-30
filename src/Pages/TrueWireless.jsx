@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer/Footer';
 import TWS from '../components/TWS/TWS';
 
-const TrueWirless = () => {
+const TrueWireless = () => {
     return (
         <>
             <TWS/>
@@ -11,4 +11,4 @@ const TrueWirless = () => {
     );
 };
 
-export default TrueWirless;
+export default TrueWireless;

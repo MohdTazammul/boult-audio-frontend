@@ -5,7 +5,7 @@ import Footer from './components/Footer/Footer';
 import {useRef} from "react";
 import Userprofile from './components/User/Userprofile';
 import {Route,Routes} from 'react-router-dom'
-import TrueWirless from './Pages/TrueWirless';
+import TrueWireless from './Pages/TrueWireless';
 import User from './Pages/User';
 function App() {
   
@@ -15,7 +15,7 @@ const body = useRef(null);
     <Navbar props={body} />
     <div className="App" ref={body}>
       <Routes>
-        <Route path='/tws' element={<TrueWirless/>}/>
+        <Route path='/tws' element={<TrueWireless/>}/>
         <Route path='/user' element={<User/>}/>
       </Routes>
     </div>
