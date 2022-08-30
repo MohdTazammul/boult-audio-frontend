@@ -2,14 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import { useRef } from "react";
+import {useRef} from "react";
+import {Route,Routes} from 'react-router-dom'
 import Login from './components/Login/Login';
 import Userprofile from './components/User/Userprofile';
-import { Route, Routes } from 'react-router-dom'
 import TrueWireless from './Pages/TrueWireless';
 import User from './Pages/User';
-import Home from "./Pages/Home"
 import NeckbandPage from './Pages/NeckbandPage';
+import Home from "./Pages/Home"
 import HeadphonePage from './Pages/HeadphonePage';
 import WiredPage from './Pages/WiredPage';
 import Flip from './components/Flipper/Flip';

@@ -3,7 +3,7 @@ import { LOGIN, LOGOUT} from "./actionType";
 const login =(token)=>{
     return {
         type:LOGIN,
-        paylode:token
+        payload:token
     }
 }
 const logout =()=>{
