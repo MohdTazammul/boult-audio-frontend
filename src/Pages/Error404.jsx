@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer/Footer';
 
 function Error404() {
+  document.title = '404 Not Found - Boult Audio';
   const navigate = useNavigate();
   return (
    <>

@@ -3,6 +3,8 @@ import Footer from '../components/Footer/Footer';
 import TWS from '../components/TWS/TWS';
 
 const TrueWireless = () => {
+    
+  document.title = 'TWS - Boult Audio';
     return (
         <>
             <TWS/>
