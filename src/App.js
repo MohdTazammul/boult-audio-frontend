@@ -15,6 +15,7 @@ import WiredPage from './Pages/WiredPage';
 import Flip from './components/Flipper/Flip';
 import SpeakerPage from './Pages/SpeakerPage';
 import Error404 from './Pages/Error404';
+import Static from './components/User/Static';
 function App() {
 
   const body = useRef(null);
@@ -23,6 +24,7 @@ function App() {
       <Navbar props={body} />
       <div className="App" ref={body}>
         <Routes>
+          <Route path="/static" element={<Static/>}/>
           <Route path='login' element={<Login />} />
           <Route path='/tws' element={<TrueWireless />} />
           <Route path='/neckband' element={<NeckbandPage />} />

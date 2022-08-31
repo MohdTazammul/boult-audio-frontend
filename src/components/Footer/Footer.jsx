@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
       </div>
     </div>
-    <div>
+    <div id='footer-bottom'>
         <div id='icon-grid'>
           <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/facebook-icon.png?v=1638472503" alt="" />
           <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/twitter-icon.png?v=1638472503" alt="" />
@@ -78,7 +78,7 @@ export default function Footer() {
           <p style={{fontSize:"12px"}}>* 8th mobility accessories excellence award, 2021</p>
           <p style={{fontSize:"12px"}}>© 2022, Boult Audio. All Rights Reserved</p>
         </div>
-      </div>
+    </div>
   </>
   )
 }
