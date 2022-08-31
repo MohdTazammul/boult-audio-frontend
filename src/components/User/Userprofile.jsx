@@ -1,7 +1,17 @@
 import React from 'react';
 import "./style.css"
 import { Icon } from '@iconify/react';
+import Verification from '../Login/Verification';
+import {useNavigate} from 'react-router-dom'
+import { useEffect } from 'react';
 const Userprofile = () => {
+    const navigation=useNavigate()
+    useEffect(()=>{
+        console.log("verification")
+        // if(Verification()){
+        //     navigation("/login")
+        // }
+    },[]);
     return (
         <>
             <div id='user-main'>
