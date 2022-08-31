@@ -4,9 +4,9 @@ const init={
     token:localStorage.getItem("token")
 }
 const reducer=(store=init,{type,payload})=>{
+    console.log("reducer",type,store)
     switch (type){
         case LOGIN:
-            localStorage.setItem("token",payload);
             return {...store,isAuth:true,token:payload}
         case LOGOUT:
             return {...store,isAuth:false,token:null}
