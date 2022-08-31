@@ -37,7 +37,7 @@ const Login = () => {
           setLoding(false)
           if(data.login){
             localStorage.setItem("token",JSON.stringify({token:data.token,isAuth:true,data:data.data}))
-            dispatch(login(data.token));
+            dispatch(login({token:data.token, data:data.data}));
             navigate("/")
           }else{
             alert(data.message)

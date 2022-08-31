@@ -4,9 +4,12 @@ import "./style.css"
 import { useRef } from 'react';
 import Collapsible from 'react-collapsible';
 import {useNavigate} from "react-router-dom"
+import { useSelector } from 'react-redux';
 
 function Navbar(props) {
 
+  const login = useSelector(s=>s)
+  console.log(login)
   const navigate = useNavigate();
 
   console.log(props)
