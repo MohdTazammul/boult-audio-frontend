@@ -8,7 +8,7 @@ function SpeakerPage() {
   return (
     <div>
       <Speaker />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

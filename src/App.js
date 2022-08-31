@@ -16,6 +16,7 @@ import Flip from './components/Flipper/Flip';
 import SpeakerPage from './Pages/SpeakerPage';
 import Error404 from './Pages/Error404';
 import Static from './components/User/Static';
+import MainFlipSlider from './components/Flipper/MainFlipSlider';
 function App() {
 
   const body = useRef(null);
@@ -33,6 +34,7 @@ function App() {
           <Route path='/user' element={<User />} />
           <Route path='/' element={<Home />} />
           <Route path="/Flip" element={<Flip />} />
+          <Route path="/Main-Flip" element={<MainFlipSlider />} />
           <Route path='*' element={<Error404 />} />
           <Route path='/speaker' element={<SpeakerPage />} />
         </Routes>

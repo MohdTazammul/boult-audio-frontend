@@ -8,7 +8,7 @@ const TrueWireless = () => {
     return (
         <>
             <TWS/>
-            {/* <Footer/> */}
+            <Footer/>
         </>
     );
 };
