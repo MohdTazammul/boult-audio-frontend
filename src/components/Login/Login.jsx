@@ -8,10 +8,13 @@ import "./Login.css"
 import { useEffect } from 'react';
 const Login = () => {
   const navigate=useNavigate();
-  const store=useSelector(store=>store);
+  var store=useSelector(store=>store);
   console.log(store);
  useEffect(()=>{
-    navigate("/")
+    if(store.isAuth){
+      navigate("/")
+    }
+    // navigate("/")
  },[])
   const dispatch=useDispatch();
   const [state, setState] = useState(true)
@@ -32,6 +35,7 @@ const Login = () => {
           if(data.login){
             console.log(data)
             dispatch(login("sdfsff"));
+            navigate("/")
           }else{
             alert(data.message)
           }
@@ -47,8 +51,9 @@ const Login = () => {
             'Content-Type': 'application/json'
           },
          body: JSON.stringify({email:email,password:pass,name:first+" "+last})
-        }).then(res=>{
-          console.log(res)
+        }).then(res=>res.json()).them(d=>{
+          console.log(d);
+          navigate("/login")
         })
     }
   }
