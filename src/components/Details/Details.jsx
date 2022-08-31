@@ -1,9 +1,23 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import {useSearchParams} from 'react-router-dom'
 import "./style.css"
 const Details = () => {
     const [quantity,setQuantity]=useState(1)
-    return (
+    const [params,setParams]=useSearchParams();
+    const [product,setProduct]=useState({})
+    const userId=useSelector(s=>s.data._id);
+    useEffect(()=>{
+        const id=params.get("id");
+        fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
+            setProduct(d)
+            console.log(d)
+        })
+    },[])
+    return product._id?
+    (
         <>
            <div id='details-main'>
                 <div id='details-add-main'>
@@ -18,20 +32,21 @@ const Details = () => {
                 <div id='details-info-main'>
                    <div  id='details-info-main-cont'>
                         <div id='details-info-main-img'>
-                            <img src="https://user-images.githubusercontent.com/90475607/187034228-311a0f39-fefe-4d24-828a-cd338a1f83b7.png" alt="" />
+                            <img src={product.image[0]} alt="" />
                         </div>
                         <div id='details-info-main-info'>
                             <div id='details-info-main-info-sub'>
                                 <div id='details-tag'>
-                                    <button>new</button>
-                                    <button>new</button>
+                                    {
+                                        product.tags.map(el=><button>{el}</button>)
+                                    }
                                 </div>
                                 <div id='details-name'>
-                                    <h2>Watch</h2>
+                                    <h2>{product.title}</h2>
                                 </div>
                                 <div id='price-qnt'>
                                     <div>
-                                        <h3 id='price'><span style={{textDecoration:"line-through"}}>₹ 1,499</span>  ₹ 2,499</h3>
+                                        <h3 id='price'><span style={{textDecoration:"line-through"}}> ₹ {product.price}</span>  ₹  {product.discountedPrice}</h3>
                                     </div>
                                     <div style={{display:"flex",gap:"10px",fontSize:"18px"}}>
                                         <div id='qnt-word'>
@@ -52,7 +67,20 @@ const Details = () => {
                                     </div>
                                 </div>
                                 <div id='details-btn'>
-                                    <button>Add To Cart</button>
+                                    <button onClick={()=>{
+                                        const obj={product:product._id,user:userId,quantity:quantity,color:product.colorName[0]};
+                                        console.log(obj)
+                                        fetch(`https://boult.herokuapp.com/cart?user=${userId}&product=${product._id}&color:${product.colorName[0]}&quantity=${quantity}`,{
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({})
+                                        }).then(res=>res.json()).then(d=>{
+                                            console.log(d)
+                                            alert(d.message)
+                                        })
+                                    }}>Add To Cart</button>
                                     <button style={{background:"#3db6cd",color:"white"}}>Buy Now</button>
                                 </div>
                                <div>
@@ -77,7 +105,7 @@ const Details = () => {
                 </div>
            </div>
         </>
-    );
+    ):""
 };
 
 export default Details;
