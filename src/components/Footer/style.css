@@ -78,6 +78,9 @@
 #icon-grid>img{
     width: 45px;
 }
+#footer-bottom{
+    text-align: center;
+}
 @media screen and (max-width:855px){
     #footer-main> #second{
         width: 100vw;

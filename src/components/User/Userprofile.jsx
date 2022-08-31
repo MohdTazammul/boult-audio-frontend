@@ -31,7 +31,9 @@ const Userprofile = () => {
                                 <h2>Ankit Mungole</h2>
                             </div>
                         </div>
-                        <div id='three'><h2>addrrece</h2></div>
+                        <div id='three'>
+                            <h2>addrrece</h2>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -25,6 +25,7 @@
     flex-direction: column;
     justify-content: space-around;
     height: 120px;
+    cursor: pointer;
 }
 #user-main-first> #details>div{
     display: flex;
@@ -60,4 +61,41 @@
     height: 30%;
     background: #dddada;
     border-radius: 0px 0px 30px 30px ;
+}
+
+@media screen and (max-width:855px){
+    #user-main{
+        width: 95vw;
+        height: auto;
+        padding: 0%;
+        flex-direction: column;
+    }
+    #user-main-first> #details{
+        width: 100%;
+        margin: 0;
+        flex-direction: row;
+        align-items: center;
+        height: 90px;
+        position: fixed;
+        bottom: 0%;
+    }
+    
+    #user-main-first> #details>div{
+
+        width: 20%;
+    }
+    #user-main-first{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    #user-main-second{
+        margin-bottom: 300px;
+        width: 100%;
+        margin: 0;
+        margin-top: 40px;
+    }
+    #footer-bottom{
+        margin-bottom: 120px;
+    }
 }
