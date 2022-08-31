@@ -17,6 +17,7 @@ import SpeakerPage from './Pages/SpeakerPage';
 import Error404 from './Pages/Error404';
 import Static from './components/User/Static';
 import MainFlipSlider from './components/Flipper/MainFlipSlider';
+import Details from './components/Details/Details';
 function App() {
 
   const body = useRef(null);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/Main-Flip" element={<MainFlipSlider />} />
           <Route path='*' element={<Error404 />} />
           <Route path='/speaker' element={<SpeakerPage />} />
+          <Route path='/details' element={<Details/>} />
         </Routes>
       </div>
     </>
