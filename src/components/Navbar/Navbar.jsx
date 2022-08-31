@@ -89,7 +89,7 @@ const mySidepanel = useRef(null);
         <button ><Icon icon="mingcute:shopping-bag-2-line" color="white" /></button>
         <button className="openbtn" onClick={openNav}><Icon icon="charm:menu-hamburger" color="white" /></button>
         <div id="mySidepanel" ref={mySidepanel} className="sidepanel">
-          <a href="#" className="closebtn" onClick={closeNav}>×</a>
+          <a href="#" className="closebtn" onClick={closeNav}>X</a>
           <a><Collapsible trigger="Shop by category" >
                   <div className='sub-links' onClick={()=>{closeNav(); navigate("/tws")}}>True Wireless</div>
                   <div className='sub-links' onClick={()=>{closeNav(); navigate("/neckband")}}>Neckband</div>
