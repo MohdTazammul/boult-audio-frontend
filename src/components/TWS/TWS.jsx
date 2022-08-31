@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import FadeInSection from '../FadeAnimation/FadeInSection'
 
 import "./style.css"
 
 function TWS() {
-
+    const navigate = useNavigate()
     const [twsProducts, setTwsProducts] = useState([]);
 
     useEffect(()=>{
@@ -46,7 +47,7 @@ function TWS() {
                         return (
                            
                             //    <FadeInSection>
-                                    <div key={i}  id={"prod-"+i} >
+                                    <div key={i}  id={"prod-"+i} style={{cursor:"pointer"}} onClick={()=>{navigate(`/details?id=${el._id}`)}}>
                                        <FadeInSection>
                                            <img src={el.cover_image} />
                                        <div key={i} style={{backgroundImage: `url(${el.cover_image})`}}>
