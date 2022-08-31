@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 const Login = () => {
   const navigate=useNavigate();
   var store=useSelector(store=>store);
-  console.log(store);
+  // console.log(store);
  useEffect(()=>{
     if(store.isAuth){
       navigate("/")
@@ -55,7 +55,7 @@ const Login = () => {
             'Content-Type': 'application/json'
           },
          body: JSON.stringify({email:email,password:pass,name:first+" "+last})
-        }).then(res=>res.json()).them(d=>{
+        }).then(res=>res.json()).then(d=>{
           console.log(d);
           setLoding(false)
           if(d.error){
