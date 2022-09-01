@@ -6,6 +6,7 @@ import {login,logout} from '../../Redux/action'
 import {useNavigate} from 'react-router-dom'
 import "./Login.css"
 import { useEffect } from 'react';
+import {signInWithPopup,auth,googleProvider} from '../../Firebase/firebase';
 const Login = () => {
   const navigate=useNavigate();
   var store=useSelector(store=>store);
@@ -37,7 +38,7 @@ const Login = () => {
           setLoding(false)
           if(data.login){
             localStorage.setItem("token",JSON.stringify({token:data.token,isAuth:true,data:data.data}))
-            dispatch(login(data.token));
+            dispatch(login({token:data.token, data:data.data}));
             navigate("/")
           }else{
             alert(data.message)
@@ -69,7 +70,7 @@ const Login = () => {
         })
     }
   }
-  return loding?<h1>Loding......</h1>: <div>
+  return loding?<div style={{display:"flex",justifyContent:"center",alignItems:"center"}}><img style={{width:"100px"}} src="https://i.stack.imgur.com/kOnzy.gif" alt="" /></div>: <div>
   <div className='login-container'>
       <div className='login-text'><p id='Log' onClick={()=>{
         setState(true)
@@ -87,7 +88,30 @@ const Login = () => {
       <div className='forgotPassword'>Forgot your password?</div>
       <div className='LoginInfo'> 
       <span id='fIcon'>Facebook Login<FontAwesomeIcon className='Ficon' icon={faFacebookF}></FontAwesomeIcon></span> 
-      <span id='gIcon'>Google Login<FontAwesomeIcon className='Gicon' icon={faGoogle}></FontAwesomeIcon></span></div>
+      <span onClick={()=>{
+        console.log("Login")
+        signInWithPopup(auth, googleProvider).then(resp=>{
+          console.log(resp)
+          setLoding(true)
+        fetch(`https://boult.herokuapp.com/account/login`,{
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+         body: JSON.stringify({email:resp.user.email,password:"GoogleOauth"})
+        }).then(res=>res.json()).then(data=>{
+          setLoding(false)
+          if(data.login){
+            localStorage.setItem("token",JSON.stringify({token:data.token,isAuth:true,data:data.data}))
+            dispatch(login({token:data.token, data:data.data}));
+            navigate("/")
+          }else{
+            alert(data.message)
+          }
+        })
+
+        })
+      }} id='gIcon'>Google Login<FontAwesomeIcon className='Gicon' icon={faGoogle}></FontAwesomeIcon></span></div>
       <div className='Text'>By clicking any of the social login buttons you are agree <br/> to the terms of privacy policy described <a target="_blank" id='tag' href='/'>here</a> </div> 
       <div><p id='textTerm'>By logging in you agree to Boult Audio's <a id='term' href='/' target="_blank">Terms of Service</a></p></div>
     </div>: <div id='SigninCont' >
@@ -106,7 +130,32 @@ const Login = () => {
     <div className='Login' id='create'  onClick={handleSubmit}> Create</div>
     <div className='LoginInfo' id='signZ'> 
       <span id='fIcon'>Facebook Login<FontAwesomeIcon className='Ficon' icon={faFacebookF}></FontAwesomeIcon></span> 
-      <span id='gIcon'>Google Login<FontAwesomeIcon className='Gicon' icon={faGoogle}></FontAwesomeIcon></span></div>
+      <span onClick={()=>{
+
+
+        console.log("register")
+        signInWithPopup(auth, googleProvider).then(resp=>{
+          console.log(resp)
+        setLoding(true)
+      fetch(`https://boult.herokuapp.com/account/register`,{
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+         body: JSON.stringify({email:resp.user.email,password:"GoogleOauth",name:resp.user.displayName})
+        }).then(res=>res.json()).then(d=>{
+          console.log(d);
+          setLoding(false)
+          if(d.error){
+            alert(d.message)
+          }else{
+            
+            alert("Registration succesfull! now you can login...")
+            navigate("/login")
+          }
+        })
+      })
+      }}  id='gIcon'>Google Login<FontAwesomeIcon className='Gicon' icon={faGoogle}></FontAwesomeIcon></span></div>
       <div className='Text' id='textZ'>By clicking any of the social login buttons you are agree <br/> to the terms of privacy policy described <a target="_blank" id='tag' href='/'>here</a> </div> 
       <div><p id='textTerm0'>By logging in you agree to Boult Audio's <a id='term' href='/' target="_blank">Terms of Service</a></p></div>
       <div className='SBox'>

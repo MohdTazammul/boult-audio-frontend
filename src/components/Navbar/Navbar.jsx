@@ -4,13 +4,17 @@ import "./style.css"
 import { useRef } from 'react';
 import Collapsible from 'react-collapsible';
 import {useNavigate} from "react-router-dom"
+import { useSelector } from 'react-redux';
 
 function Navbar(props) {
 
+  const login = useSelector(s=>s)
+  console.log(login)
   const navigate = useNavigate();
 
   console.log(props)
-const mySidepanel = useRef(null);
+  const mySidepanel = useRef(null);
+  const cartModal = useRef(null);
 // const body = useRef(null);
   function openNav() {
     props.props.current.style.filter="blur(5px)";
@@ -20,6 +24,13 @@ const mySidepanel = useRef(null);
   function closeNav() {
     props.props.current.style.filter="blur(0px)";
     mySidepanel.current.style.width = "0";
+  }
+  function openCartModal() {
+    console.log("button clicked")
+    cartModal.current.style.width = "400px";
+  }
+  function closeCartModal() {
+    cartModal.current.style.width = "0px";
   }
 
   return (
@@ -86,10 +97,43 @@ const mySidepanel = useRef(null);
         
         <button><Icon icon="carbon:search" color="white" /></button>
         <button ><Icon icon="mingcute:user-2-line" color="white" /></button>
-        <button ><Icon icon="mingcute:shopping-bag-2-line" color="white" /></button>
+        <button className='openbtn2' onClick={openCartModal} ><Icon icon="mingcute:shopping-bag-2-line" color="white" /></button>
+        <div  ref={cartModal} className="cartModal">
+          <a className="closebtn" onClick={closeCartModal}><Icon icon="icon-park:close" /></a>
+          <div>
+            <div>
+            <Icon icon="clarity:shopping-cart-line" hFlip={true} /> shopping cart
+            </div>
+            <div>Shipping &amp; taxes will be calculated at checkout</div>
+            <div className='cart-products'>
+
+            </div>
+            <div id='subtotal'>
+              <div>SUBTOTAL</div>
+              <div>Rs. <span id='amount'>{(0).toLocaleString(undefined,{ minimumFractionDigits: 2 })}</span></div>
+            </div>
+            <div className='UPI-COD'>
+                <div>
+                  <div>Pay via upi/cod</div>
+                  <div>5% discount upto Rs. 50 on UPI</div>
+                </div>
+                <div>
+                  <img src='https://cdn.gokwik.co/v4/images/upi-icons.svg' height={"100%"} />
+                </div>
+            </div>
+            <div className='cards'>
+                PAY VIA CREDIT/DEBIT CARD/OTHERS
+            </div>
+            <div className='cart-link'>view cart</div>
+          </div>
+
+
+        </div>
+
+
         <button className="openbtn" onClick={openNav}><Icon icon="charm:menu-hamburger" color="white" /></button>
-        <div id="mySidepanel" ref={mySidepanel} className="sidepanel">
-          <a href="#" className="closebtn" onClick={closeNav}>X</a>
+        <div  ref={mySidepanel} className="sidepanel">
+          <a className="closebtn" onClick={closeNav}>x</a>
           <a><Collapsible trigger="Shop by category" >
                   <div className='sub-links' onClick={()=>{closeNav(); navigate("/tws")}}>True Wireless</div>
                   <div className='sub-links' onClick={()=>{closeNav(); navigate("/neckband")}}>Neckband</div>
