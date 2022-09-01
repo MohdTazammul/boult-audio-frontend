@@ -9,9 +9,14 @@ const Details = () => {
     const [params,setParams]=useSearchParams();
     const [product,setProduct]=useState({})
     const userId=useSelector(s=>s.data._id);
+    const [color,setColor]=useState(0);
     useEffect(()=>{
+        // let prod=JSON.parse(localStorage.getItem("prod"))
+        // setProduct(prod)
+        // console.log(prod.color,prod.image)
         const id=params.get("id");
         fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
+            localStorage.setItem("prod",JSON.stringify(d));
             setProduct(d)
             console.log(d)
         })
@@ -28,11 +33,23 @@ const Details = () => {
                             <p>*8th Mobility Accessories Excellence Awards 2021.</p>
                         </div>
                     </div>
+                    <div id='color-selector-main'>
+                        <div><p id='color-text'>CHOOSE THE SKIN</p></div>
+                            <button id='color-selector'>
+                                {
+                                    product.colorName.map((el,i)=>{
+                                        return <div className='color-iner' style={{background:el}} onClick={()=>{
+                                            setColor(i)
+                                        }}></div>
+                                    })
+                                }
+                            </button>
+                        </div>
                 </div>
                 <div id='details-info-main'>
                    <div  id='details-info-main-cont'>
                         <div id='details-info-main-img'>
-                            <img src={product.image[0]} alt="" />
+                            <img src={product.image[color]} alt="" />
                         </div>
                         <div id='details-info-main-info'>
                             <div id='details-info-main-info-sub'>
@@ -70,7 +87,7 @@ const Details = () => {
                                     <button onClick={()=>{
                                         const obj={product:product._id,user:userId,quantity:quantity,color:product.colorName[0]};
                                         console.log(obj)
-                                        fetch(`https://boult.herokuapp.com/cart?user=${userId}&product=${product._id}&color:${product.colorName[0]}&quantity=${quantity}`,{
+                                        fetch(`https://boult.herokuapp.com/cart?user=${userId}&product=${product._id}&color=${product.colorName[0]}&quantity=${quantity}`,{
                                         method: 'POST',
                                         headers: {
                                             'Content-Type': 'application/json'

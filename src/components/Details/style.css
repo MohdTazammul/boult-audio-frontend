@@ -146,3 +146,32 @@
 #detail-visa img{
     height: 40px;
 }
+#color-selector{
+    border: none;
+    background: #CACACA;
+    height: 35px;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 5px 10px;
+    /* display: flex; */
+}
+#color-text{
+    margin: 0;
+    padding: 0px 0px 5px 0px;
+    font-size: 9px;
+}
+#color-selector div{
+    cursor: pointer;
+    display: inline-block;
+    margin: 0px 3px;
+    width: 23px !important;
+    height: 23px;
+    border-radius: 50%;
+}
+
+#color-selector-main{
+    position: absolute;
+    bottom: 0px;
+    left: 40%;
+    transform: rotate(-90deg);
+}
