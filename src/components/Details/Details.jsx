@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import {useSearchParams} from 'react-router-dom'
+import Faq from './Faq';
 import "./style.css"
 const Details = () => {
     const [quantity,setQuantity]=useState(1)
@@ -11,15 +12,15 @@ const Details = () => {
     const userId=useSelector(s=>s.data._id);
     const [color,setColor]=useState(0);
     useEffect(()=>{
-        // let prod=JSON.parse(localStorage.getItem("prod"))
-        // setProduct(prod)
-        // console.log(prod.color,prod.image)
-        const id=params.get("id");
-        fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
-            // localStorage.setItem("prod",JSON.stringify(d));
-            setProduct(d)
-            // console.log(d)
-        })
+        let prod=JSON.parse(localStorage.getItem("prod"))
+        setProduct(prod)
+        console.log(prod)
+        // const id=params.get("id");
+        // fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
+        //     // localStorage.setItem("prod",JSON.stringify(d));
+        //     setProduct(d)
+        //     // console.log(d)
+        // })
     },[])
     return product._id?
     (
@@ -120,6 +121,9 @@ const Details = () => {
                         </div>
                    </div>
                 </div>
+           </div>
+           <div id='faq-cont'>
+            <Faq que={product.FAQ_Ques} ans={product.FAQ_Ans}/>
            </div>
         </>
     ):""

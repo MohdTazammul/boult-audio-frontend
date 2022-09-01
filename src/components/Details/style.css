@@ -175,3 +175,35 @@
     left: 40%;
     transform: rotate(-90deg);
 }
+#faq-cont h4{
+    margin: 0;
+    padding: 0;
+    color: #121212BF;
+    font-weight: lighter;
+}
+#faq-cont h2{
+    margin: 10px;
+    padding: 0;
+    color: #121212;
+    font-weight: lighter;
+}
+#faq-cont{
+    padding: 100px;
+    width: 60%;
+    margin: auto;
+    /* border: 2px solid red; */
+}
+.faq-single-cont{
+    width: 100%;
+    /* border: 2px solid red; */
+}
+.faq-single-cont div{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-cont-que{
+    cursor: pointer;
+}
