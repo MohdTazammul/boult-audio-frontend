@@ -16,9 +16,9 @@ const Details = () => {
         // console.log(prod.color,prod.image)
         const id=params.get("id");
         fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
-            localStorage.setItem("prod",JSON.stringify(d));
+            // localStorage.setItem("prod",JSON.stringify(d));
             setProduct(d)
-            console.log(d)
+            // console.log(d)
         })
     },[])
     return product._id?
@@ -87,7 +87,7 @@ const Details = () => {
                                     <button onClick={()=>{
                                         const obj={product:product._id,user:userId,quantity:quantity,color:product.colorName[0]};
                                         console.log(obj)
-                                        fetch(`https://boult.herokuapp.com/cart?user=${userId}&product=${product._id}&color=${product.colorName[0]}&quantity=${quantity}`,{
+                                        fetch(`https://boult.herokuapp.com/cart?user=${userId}&product=${product._id}&color=${product.colorName[color]}&quantity=${quantity}`,{
                                         method: 'POST',
                                         headers: {
                                             'Content-Type': 'application/json'
