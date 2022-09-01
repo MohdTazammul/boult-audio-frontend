@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import {useSearchParams} from 'react-router-dom'
 import Faq from './Faq';
+import { Icon } from '@iconify/react';
 import "./style.css"
 const Details = () => {
     const [quantity,setQuantity]=useState(1)
@@ -41,7 +42,9 @@ const Details = () => {
                                     product.colorName.map((el,i)=>{
                                         return <div className='color-iner' style={{background:el}} onClick={()=>{
                                             setColor(i)
-                                        }}></div>
+                                        }}>
+                                            <div style={{border:`2px solid ${el}`,display:color==i?"block":"none"}} id='inner-circle'></div>
+                                        </div>
                                     })
                                 }
                             </button>
@@ -115,7 +118,7 @@ const Details = () => {
                                     </div>
                                </div>
                                 <div id='detail-visa'>
-                                    <p> <span></span> Free Shipping <span></span>Secure Payment <span></span>Satisfaction Guaranteed</p>
+                                    <p> <span style={{margin:"10px"}}><Icon icon="ic:twotone-local-shipping" /></span> Free Shipping <span style={{margin:"10px"}}><Icon icon="arcticons:eset-payment-protection" /></span>Secure Payment <span style={{margin:"10px"}}><Icon icon="icon-park-outline:good-two" /></span>Satisfaction Guaranteed</p>
                                 </div>
                             </div>
                         </div>

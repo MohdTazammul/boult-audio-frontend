@@ -47,7 +47,7 @@ const Userprofile = () => {
                         <div id='two'>
                             <div>
                                 <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/profile-user-icon.png?v=1645163243" alt="" />
-                                <h2>{data.name}</h2>
+                                <h2 style={{textAlign:"center"}}>{data.name}</h2>
                             </div>
                         </div>
                         <div id='three'>

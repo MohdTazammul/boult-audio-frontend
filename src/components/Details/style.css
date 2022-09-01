@@ -164,10 +164,13 @@
     cursor: pointer;
     display: inline-block;
     margin: 0px 3px;
-    width: 23px !important;
+    width: 23px;
     height: 23px;
     border-radius: 50%;
 }
+
+
+
 
 #color-selector-main{
     position: absolute;
@@ -186,6 +189,13 @@
     padding: 0;
     color: #121212;
     font-weight: lighter;
+}
+#inner-circle{
+    margin-left: -3px !important;
+    margin-top: -3px !important;
+     
+    width: 25px !important;
+    height: 25px !important;
 }
 #faq-cont{
     padding: 100px;
