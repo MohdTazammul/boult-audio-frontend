@@ -96,7 +96,14 @@ function Navbar(props) {
         <div className='icons'>
         
         <button><Icon icon="carbon:search" color="white" /></button>
-        <button ><Icon icon="mingcute:user-2-line" color="white" /></button>
+        <button onClick={()=>{
+          console.log("user")
+          if(login.isAuth){
+            navigate("/user")
+          }else{
+            navigate("/login")
+          }
+        }}><Icon icon="mingcute:user-2-line" color="white" /></button>
         <button className='openbtn2' onClick={openCartModal} ><Icon icon="mingcute:shopping-bag-2-line" color="white" /></button>
         <div  ref={cartModal} className="cartModal">
           <a className="closebtn" onClick={closeCartModal}><Icon icon="icon-park:close" /></a>

@@ -154,7 +154,7 @@ z-index: 6;
 }
 #navbar .icons button
 {
-    
+    cursor: pointer;
     border: none;
     background-color: transparent;
 }

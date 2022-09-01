@@ -27,6 +27,9 @@
     height: 120px;
     cursor: pointer;
 }
+#user-main-first> #details :hover{
+    color: #3997A7;
+}
 #user-main-first> #details>div{
     display: flex;
     gap: 8%;
@@ -78,6 +81,7 @@
         height: 90px;
         position: fixed;
         bottom: 0%;
+        cursor: pointer;
     }
     
     #user-main-first> #details>div{
