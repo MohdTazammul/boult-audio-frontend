@@ -1,6 +1,6 @@
 .Container{
-    width: 450px;
-    height: 600px;
+    width: 350px;
+    height: 450px;
     position: relative; 
     margin: auto;
 }
@@ -97,7 +97,61 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
-    padding: 5px 30px;
+    padding: 3px 30px;
     background: white;
     border-radius: 30px;
+}
+#SbW{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+}
+#SbW::-webkit-scrollbar{
+    display: none;
+}
+#Bt{
+    /* border: 1px solid; */
+    padding: 0px;
+    padding-top: 2px;
+}
+#left{
+    position: absolute;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    top: 65%;
+    right: 2%;
+    transform: translateY(-40%);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.5s ease-in-out 0s;
+}
+#right{
+    position: absolute;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    top: 65%;
+    transform: translateY(-40%);
+    cursor: pointer;
+    user-select: none;
+    transform: rotate(180deg);
+    left: 2%;
+    transition: all 0.5s ease 0s;
+}
+.Show{
+    visibility: visible;
+}
+.Hide{
+    visibility: hidden;
 }
