@@ -6,7 +6,7 @@ import {login,logout} from '../../Redux/action'
 import {useNavigate} from 'react-router-dom'
 import "./Login.css"
 import { useEffect } from 'react';
-import {signInWithPopup,auth,googleProvider} from '../../Firebase/firebase';
+import {signInWithPopup,auth,googleProvider,facebookProvider} from '../../Firebase/firebase';
 const Login = () => {
   const navigate=useNavigate();
   var store=useSelector(store=>store);
@@ -24,9 +24,23 @@ const Login = () => {
   const [pass, setPass] = useState("")
   const [first, setFirst] = useState("")
   const [last, setLast] = useState("")
+  function ValidateEmail(mail) 
+    {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+          return true
+      return false
+    }
   async function handleSubmit(){
     if(state){
       console.log("login fetch")
+      if(email==""||pass==""){
+        alert("please fill all the inputs...");
+        return;
+      }
+      if(!ValidateEmail(email)){
+        alert("please fill the valid email....");
+        return;
+      }
       setLoding(true)
         fetch(`https://boult.herokuapp.com/account/login`,{
           method: 'POST',
@@ -49,6 +63,14 @@ const Login = () => {
         setPass("")
     }else{
       console.log(email,pass,first,last)
+      if(email==""||pass==""||first==""||last==""){
+        alert("please fill all the inputs...");
+        return;
+      }
+      if(!ValidateEmail(email)){
+        alert("please fill the valid email....");
+        return;
+      }
       setLoding(true)
       fetch(`https://boult.herokuapp.com/account/register`,{
           method: 'POST',
@@ -86,7 +108,12 @@ const Login = () => {
       }}  placeholder='Password' type="password" autoCorrect='off' autoCapitalize='none' />
       <div className='Login' onClick={handleSubmit}> Login</div>
       <div className='forgotPassword'>Forgot your password?</div>
-      <div className='LoginInfo'> 
+      <div onClick={()=>{
+        signInWithPopup(auth,facebookProvider)
+        .then(res=>{
+            console.log(res)
+        })
+      }} className='LoginInfo'> 
       <span id='fIcon'>Facebook Login<FontAwesomeIcon className='Ficon' icon={faFacebookF}></FontAwesomeIcon></span> 
       <span onClick={()=>{
         console.log("Login")
@@ -129,7 +156,14 @@ const Login = () => {
       }}   placeholder='Password' type="password" autoComplete='password' autoCorrect='off' autoCapitalize='none' className='emailInput' />
     <div className='Login' id='create'  onClick={handleSubmit}> Create</div>
     <div className='LoginInfo' id='signZ'> 
-      <span id='fIcon'>Facebook Login<FontAwesomeIcon className='Ficon' icon={faFacebookF}></FontAwesomeIcon></span> 
+      <span onClick={()=>{
+        signInWithPopup(auth,facebookProvider)
+        .then(res=>{
+            console.log(res)
+        }).catch(err=>{
+          alert("please try with diifrent methode")
+        })
+      }}  id='fIcon'>Facebook Login<FontAwesomeIcon className='Ficon' icon={faFacebookF}></FontAwesomeIcon></span> 
       <span onClick={()=>{
 
 

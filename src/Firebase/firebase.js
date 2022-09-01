@@ -13,7 +13,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
-export {signInWithPopup,auth,googleProvider};
+const facebookProvider=new FacebookAuthProvider()
+export {signInWithPopup,auth,googleProvider,facebookProvider};
 // export const signInWithGoogle = async () =>{
 //     signInWithPopup(auth, googleProvider).then(resp=>{
 //         return resp;
@@ -22,10 +23,10 @@ export {signInWithPopup,auth,googleProvider};
 //     //   console.log(email, obj)
 // })};
 
-export const signInWithFacebook = async () =>{
-    const provider=new FacebookAuthProvider()
-    signInWithPopup(auth,provider)
-    .then(res=>{
-        console.log(res)
-    })
-}
+// export const signInWithFacebook = async () =>{
+//     const provider=new FacebookAuthProvider()
+//     signInWithPopup(auth,provider)
+//     .then(res=>{
+//         console.log(res)
+//     })
+// }
