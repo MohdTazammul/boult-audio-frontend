@@ -39,17 +39,29 @@ console.log(API)
   var [cartLoading, setCartLoading] = useState(false);
   var [cartData, setCartData] = useState([]);
   var [subtotal, setSubtotal] = useState(0);
+  var [cartProductsQuantity, setCartProductsQuantity] = useState([]);
   function openCartModal() {
     if(!login.isAuth)
     {
       navigate("/login")
       return
     }
+    setCartLoading(true);
     fetch(API+`/cart/${login.data._id}`).then(resp=>resp.json()).then((data)=>
     {
       setCartData(data);
-      setSubtotal(data.reduce((a, b) => a.product.price + b.product.price, 0))
-      console.log(subtotal)
+      console.log(data);
+      var temp=0;
+      var qty = [];
+      data.map(el=>
+        {
+          temp+= (+(el.product.discountedPrice.split(",").join("")));
+          qty.push(el.quantity);
+        })
+        setCartProductsQuantity(qty)
+      setSubtotal(temp)
+      // console.log(qty)
+      console.log(cartProductsQuantity)
       setCartLoading(false);
     }
     )
@@ -68,7 +80,7 @@ console.log(API)
         <div className='links'
         //  ref={links}
         >
-            <div>
+            <div style={{cursor:"pointer"}} onClick={()=>navigate("/")}>
             <img src='https://user-images.githubusercontent.com/90475607/187048302-c4430181-c367-4a23-a913-871774aa2457.png' />
             </div>
             <div className="navbar-links" 
@@ -139,17 +151,43 @@ console.log(API)
             </div>
             <div>Shipping &amp; taxes will be calculated at checkout</div>
             <div className='cart-products'>
-              {cartLoading?"Loading...":
-              cartData.map(el=>{
+              {cartLoading
+              ?
+                <div className='cart-loader'>
+                  <img src='https://user-images.githubusercontent.com/90475607/188233791-8fd774af-0c49-4f6d-b79b-08e740b45a9f.gif' />
+                </div>
+                :
+              cartData.length == 0 ? <h1 style={{textAlign:"center"}}>Your cart is empty</h1>:
+              cartData.map((el,i)=>{
                 return (
-                  <div className='cart-product-row'>
+                  <div key={i} className='cart-product-row' onClick={()=>navigate(`/details?id=${el.product._id}`)}>
                     <div style={{backgroundImage:`url(${el.product.cover_image})`}}>
                     </div>
                     <div>
-                      <div>{el.product.productModel}</div>
+                      <div>
+                         <div className='bold'>{el.product.productModel}</div>
+                         <div className='color'>{el.color}</div>
+                         <div className='cart-quantity'>
+                           <button onClick={()=>{
+                             if(cartProductsQuantity[i] == 1)
+                              return;
+                            cartProductsQuantity[i]--;
+
+                           }}>-</button>
+                           <button>{cartProductsQuantity[i]}</button>
+                           <button onClick={()=>{
+                             if(cartProductsQuantity[i] == 10)
+                              return;
+                            cartProductsQuantity[i]++;
+                           }}>+</button>
+                           </div>
+                      </div>
                     </div>
                     <div>
-                      <div>Rs. {el.product.price}</div>
+                      <div className='bold'>Rs. {(el.product.discountedPrice).toLocaleString(undefined,{ minimumFractionDigits: 2 })}</div>
+                      <div>
+                        <Icon icon="ep:delete" />
+                      </div>
                     </div>
                   </div>
                 )
