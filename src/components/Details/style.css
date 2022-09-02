@@ -271,3 +271,40 @@
 #video-add-cont>#add-three{
     width: 30%;
 }
+#cont-with-timer{
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    border-radius: 40px;
+    background: #F6F6F6;
+}
+#cont-with-timer-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: skyblue;
+    width: 95%;
+    height: 60%;
+    font-size: 24px;
+}
+
+#cont-with-timer-text h1{
+    width: 350px;
+    text-align: center;
+}
+#cont-with-timer-img{
+    display: flex;
+    width: 95%;
+    height: 40%;
+    justify-content: end;
+    align-items: center;
+    gap: 20%;
+}
+#join-text-img{
+    display: flex;
+    gap: 20px;
+}
+#join-text-img p{
+    margin: 0;
+    padding: 0;
+}

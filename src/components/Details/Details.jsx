@@ -12,6 +12,13 @@ const Details = () => {
     const [product,setProduct]=useState({})
     const userId=useSelector(s=>s.data._id);
     const [color,setColor]=useState(0);
+    const timerText=[["make a note off this"],[ "Call mom !"],["Add beliver song  to my Spotify playlist"],["Send mail to john@gamil.com"],["Text john that I'm busy"]];
+    const [textInd,setTextInd]=useState(0)
+    useEffect(()=>{
+        setTimeout(()=>{
+            setTextInd(pre=>(pre+1)%timerText.length)
+        },800)
+    },[textInd])
     useEffect(()=>{
         let prod=JSON.parse(localStorage.getItem("prod"))
         setProduct(prod)
@@ -155,6 +162,30 @@ const Details = () => {
                         <div>
                             <p className='top-add-text'>1Mn+ Products</p>
                             <p className='top-add-text-color'>reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='cont-with-timer'>
+                <div id='cont-with-timer-text'>
+                    <div style={{display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                        <h1>{timerText[textInd][0]}</h1>
+                        
+                    </div>
+                </div>
+                <div id='cont-with-timer-img'>
+                    <div>
+                        <img src="https://user-images.githubusercontent.com/93372275/188058456-a85dd039-f9d8-419b-83ac-f88c43c070b2.png" alt="" />
+                    </div>
+                    <div id='join-text-img'>
+                        <div>
+                            <img src="https://user-images.githubusercontent.com/93372275/188058240-8a6ed1e5-ac72-4e4f-a231-20ba71e94a85.png" alt="" />
+                        </div>
+                        <div>
+                            <p>Your voice, Our command.</p>
+                            <p>Have Siri & Google Assistant</p>
+                            <p>at your disposal at the click</p>
+                            <p>of a button.</p>
                         </div>
                     </div>
                 </div>

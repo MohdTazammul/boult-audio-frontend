@@ -11,7 +11,7 @@ const Faq = ({que,ans}) => {
                 <hr />
                    {
                     que.map((el,i)=>(
-                        <div className='faq-single-cont'>
+                        <div key={i} className='faq-single-cont'>
                             <div className='faq-cont-que' onClick={()=>{
                                 setIndex(pre=>{
                                     let res=pre.includes(i)
