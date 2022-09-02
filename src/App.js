@@ -19,6 +19,7 @@ import Static from './components/User/Static';
 import MainFlipSlider from './components/Flipper/MainFlipSlider';
 import Details from './components/Details/Details';
 import WatchesPage from './Pages/WatchesPage';
+import Search from './components/Search/Search';
 function App() {
 
   const body = useRef(null);
@@ -28,6 +29,7 @@ function App() {
       <div className="App" ref={body}>
         <Routes>
           <Route path="/static" element={<Static/>}/>
+          <Route path="/search" element={<Search/>}/>
           <Route path='login' element={<Login />} />
           <Route path='/tws' element={<TrueWireless />} />
           <Route path='/neckband' element={<NeckbandPage />} />
