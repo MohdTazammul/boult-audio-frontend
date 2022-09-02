@@ -21,6 +21,7 @@ import Details from './components/Details/Details';
 import WatchesPage from './Pages/WatchesPage';
 import Search from './components/Search/Search';
 import Grid from './components/Grid/Grid';
+import MPin from './components/Pin/MPin';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
           <Route path='/smart-watches' element={<WatchesPage />} />
           <Route path='/details' element={<Details/>} />
           <Route path='/grid' element={<Grid/>}/>
+          <Route path='/pin' element={<MPin/>}/>
         </Routes>
       </div>
     </>
