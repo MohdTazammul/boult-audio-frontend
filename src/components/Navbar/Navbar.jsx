@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Icon } from '@iconify/react';
 import "./style.css"
 import { useRef } from 'react';
 import Collapsible from 'react-collapsible';
 import {useNavigate} from "react-router-dom"
 import { useSelector } from 'react-redux';
+import API from "../../utills/API";
+import { useState } from 'react';
+
 
 function Navbar(props) {
 
+console.log(API)
   const login = useSelector(s=>s)
   console.log(login)
   const navigate = useNavigate();
+
+
+  
+  // useEffect(()=>{
+  //   const cartData = fetch()
+  // }, [])
 
   console.log(props)
   const mySidepanel = useRef(null);
   const cartModal = useRef(null);
 // const body = useRef(null);
   function openNav() {
+   
     props.props.current.style.filter="blur(5px)";
     mySidepanel.current.style.width = "250px";
     mySidepanel.current.style.filter="blur(0px)";
@@ -25,8 +36,23 @@ function Navbar(props) {
     props.props.current.style.filter="blur(0px)";
     mySidepanel.current.style.width = "0";
   }
+  var [cartLoading, setCartLoading] = useState(false);
+  var [cartData, setCartData] = useState([]);
+  var [subtotal, setSubtotal] = useState(0);
   function openCartModal() {
-    console.log("button clicked")
+    if(!login.isAuth)
+    {
+      navigate("/login")
+      return
+    }
+    fetch(API+`/cart/${login.data._id}`).then(resp=>resp.json()).then((data)=>
+    {
+      setCartData(data);
+      setSubtotal(data.reduce((a, b) => a.product.price + b.product.price, 0))
+      console.log(subtotal)
+      setCartLoading(false);
+    }
+    )
     cartModal.current.style.width = "400px";
   }
   function closeCartModal() {
@@ -113,11 +139,26 @@ function Navbar(props) {
             </div>
             <div>Shipping &amp; taxes will be calculated at checkout</div>
             <div className='cart-products'>
-
+              {cartLoading?"Loading...":
+              cartData.map(el=>{
+                return (
+                  <div className='cart-product-row'>
+                    <div style={{backgroundImage:`url(${el.product.cover_image})`}}>
+                    </div>
+                    <div>
+                      <div>{el.product.productModel}</div>
+                    </div>
+                    <div>
+                      <div>Rs. {el.product.price}</div>
+                    </div>
+                  </div>
+                )
+              })
+              }
             </div>
             <div id='subtotal'>
               <div>SUBTOTAL</div>
-              <div>Rs. <span id='amount'>{(0).toLocaleString(undefined,{ minimumFractionDigits: 2 })}</span></div>
+              <div>Rs. <span id='amount'>{(subtotal).toLocaleString(undefined,{ minimumFractionDigits: 2 })}</span></div>
             </div>
             <div className='UPI-COD'>
                 <div>
