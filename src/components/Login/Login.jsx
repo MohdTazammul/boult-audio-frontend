@@ -42,7 +42,7 @@ const Login = () => {
         return;
       }
       setLoding(true)
-        fetch(`https://boult.herokuapp.com/account/login`,{
+        fetch(`https://boult-temp.herokuapp.com/account/login`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ const Login = () => {
         return;
       }
       setLoding(true)
-      fetch(`https://boult.herokuapp.com/account/register`,{
+      fetch(`https://boult-temp.herokuapp.com/account/register`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ const Login = () => {
         signInWithPopup(auth, googleProvider).then(resp=>{
           console.log(resp)
           setLoding(true)
-        fetch(`https://boult.herokuapp.com/account/login`,{
+        fetch(`https://boult-temp.herokuapp.com/account/login`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -171,7 +171,7 @@ const Login = () => {
         signInWithPopup(auth, googleProvider).then(resp=>{
           console.log(resp)
         setLoding(true)
-      fetch(`https://boult.herokuapp.com/account/register`,{
+      fetch(`https://boult-temp.herokuapp.com/account/register`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
