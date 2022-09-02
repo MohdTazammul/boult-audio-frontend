@@ -22,6 +22,7 @@ import WatchesPage from './Pages/WatchesPage';
 import Search from './components/Search/Search';
 import Grid from './components/Grid/Grid';
 import CartPage from './Pages/CartPage';
+import MPin from './components/Pin/MPin';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
           <Route path='/details' element={<Details/>} />
           <Route path='/grid' element={<Grid/>}/>
           <Route path='/cart' element={<CartPage />}/>
+          <Route path='/pin' element={<MPin/>}/>
         </Routes>
       </div>
     </>
