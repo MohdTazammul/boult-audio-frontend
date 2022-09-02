@@ -1,0 +1,22 @@
+
+.alert {
+    visibility: visible;
+    animation: fadeIn 1s;
+    width: auto;
+    font-weight: bold ;
+    text-align: center;
+    padding: 8px 10px;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 1;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #DFF0D8;
+  
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
