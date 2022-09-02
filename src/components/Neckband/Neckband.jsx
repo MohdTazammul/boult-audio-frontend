@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import FadeInSection from '../FadeAnimation/FadeInSection'
-
+import API from "../../utills/API";
 import "./style.css"
 
 function Neckband() {
@@ -11,7 +11,7 @@ function Neckband() {
     const [twsProducts, setTwsProducts] = useState([]);
 
     useEffect(()=>{
-        fetch("https://boult.herokuapp.com/product/Neckband").then(resp=>resp.json()).then(data=>setTwsProducts(data))
+        fetch(API+"/product/Neckband").then(resp=>resp.json()).then(data=>setTwsProducts(data))
     }, [])
     return (
         <div className='neckband'>

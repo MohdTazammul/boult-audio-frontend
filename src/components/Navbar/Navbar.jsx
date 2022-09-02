@@ -161,7 +161,7 @@ console.log(API)
               cartData.map((el,i)=>{
                 return (
                   <div key={i} className='cart-product-row' onClick={()=>navigate(`/details?id=${el.product._id}`)}>
-                    <div style={{backgroundImage:`url(${el.product.cover_image})`}}>
+                    <div style={{backgroundImage:`url(${el.product.image[el.product.colorName.indexOf(el.color)]})`}}>
                     </div>
                     <div>
                       <div>
@@ -210,7 +210,7 @@ console.log(API)
             <div className='cards'>
                 PAY VIA CREDIT/DEBIT CARD/OTHERS
             </div>
-            <div className='cart-link'>view cart</div>
+            <div onClick={()=>navigate("/cart")} className='cart-link'>view cart</div>
           </div>
 
 
