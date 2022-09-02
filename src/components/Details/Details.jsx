@@ -12,6 +12,13 @@ const Details = () => {
     const [product,setProduct]=useState({})
     const userId=useSelector(s=>s.data._id);
     const [color,setColor]=useState(0);
+    const timerText=[["make a note off this"],[ "Call mom !"],["Add beliver song  to my Spotify playlist"],["Send mail to john@gamil.com"],["Text john that I'm busy"]];
+    const [textInd,setTextInd]=useState(0)
+    useEffect(()=>{
+        setTimeout(()=>{
+            setTextInd(pre=>(pre+1)%timerText.length)
+        },800)
+    },[textInd])
     useEffect(()=>{
         // let prod=JSON.parse(localStorage.getItem("prod"))
         // setProduct(prod)
@@ -35,26 +42,28 @@ const Details = () => {
                             <p>*8th Mobility Accessories Excellence Awards 2021.</p>
                         </div>
                     </div>
-                    <div id='color-selector-main'>
-                        <div><p id='color-text'>CHOOSE THE SKIN</p></div>
-                            <button id='color-selector'>
-                                {
-                                    product.colorName.map((el,i)=>{
-                                        return <div className='color-iner' style={{background:el}} onClick={()=>{
-                                            setColor(i)
-                                        }}>
-                                            <div style={{border:`2px solid ${el}`,display:color==i?"block":"none"}} id='inner-circle'></div>
-                                        </div>
-                                    })
-                                }
-                            </button>
-                        </div>
+                    
                 </div>
                 <div id='details-info-main'>
                    <div  id='details-info-main-cont'>
                         <div id='details-info-main-img'>
                             <img src={product.image[color]} alt="" />
+                            <div id='color-selector-main'>
+                                <div><p id='color-text'>CHOOSE THE SKIN</p></div>
+                                <button id='color-selector'>
+                                    {
+                                        product.colorName.map((el,i)=>{
+                                            return <div className='color-iner' style={{background:el}} onClick={()=>{
+                                                setColor(i)
+                                            }}>
+                                                <div style={{border:`2px solid ${el}`,display:color==i?"block":"none"}} id='inner-circle'></div>
+                                            </div>
+                                        })
+                                    }
+                                </button>
                         </div>
+                        </div>
+                       
                         <div id='details-info-main-info'>
                             <div id='details-info-main-info-sub'>
                                 <div id='details-tag'>
@@ -125,9 +134,66 @@ const Details = () => {
                    </div>
                 </div>
            </div>
+            <div>
+                <div id='video-add-cont'>
+                    <div id='add-one'>
+                        <div id='img-div'>
+                            <img src="https://im2.ezgif.com/tmp/ezgif-2-866be6496e.gif" alt="" />
+                            <h1 style={{position:"absolute",top:"35%",left:"50%",transform:"translate(-50%,-50%)"}}>5Mn+</h1>
+                            {/* <video src='https://user-images.githubusercontent.com/90475607/187777600-637cf4e9-e430-4e17-9785-8087537fda05.mp4' loop autoPlay/> */}
+                            {/* <video src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/Circle_Video.mp4?v=1638868220" autoplay="autoplay"></video> */}
+                        </div>
+                        <div>
+                            <p className='top-add-text'>5 Million +</p>
+                            <p className='top-add-text-color'>units sold</p>
+                        </div>
+                    </div>
+                    <div id='add-two'>
+                        <div id='big-text'>0:08</div>
+                        <div>
+                            <p className='top-add-text'>01 Product sold</p>
+                            <p className='top-add-text-color'>every 08 seconds</p>
+                        </div>
+                    </div>
+                    <div id='add-three'>
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0548/8849/7221/files/animated-character_9c7d797c-16c0-4c76-a906-78153f84c8cc.gif?v=1653978792" alt="" />
+                        </div>
+                        <div>
+                            <p className='top-add-text'>1Mn+ Products</p>
+                            <p className='top-add-text-color'>reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='cont-with-timer'>
+                <div id='cont-with-timer-text'>
+                    <div style={{display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                        <h1>{timerText[textInd][0]}</h1>
+                        
+                    </div>
+                </div>
+                <div id='cont-with-timer-img'>
+                    <div>
+                        <img src="https://user-images.githubusercontent.com/93372275/188058456-a85dd039-f9d8-419b-83ac-f88c43c070b2.png" alt="" />
+                    </div>
+                    <div id='join-text-img'>
+                        <div>
+                            <img src="https://user-images.githubusercontent.com/93372275/188058240-8a6ed1e5-ac72-4e4f-a231-20ba71e94a85.png" alt="" />
+                        </div>
+                        <div>
+                            <p>Your voice, Our command.</p>
+                            <p>Have Siri & Google Assistant</p>
+                            <p>at your disposal at the click</p>
+                            <p>of a button.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
            <div id='faq-cont'>
             <Faq que={product.FAQ_Ques} ans={product.FAQ_Ans}/>
            </div>
+          
         </>
     ):""
 };

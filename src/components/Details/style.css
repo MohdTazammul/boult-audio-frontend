@@ -40,15 +40,18 @@
     height: 80%;
 }
 #details-info-main-cont{
+    position: relative;
     width: 80%;
     margin: auto;
     height: 100%;
     display: flex;
+    
 }
 #details-info-main-img{
     /* border: 2px solid blue; */
     width: 50%;
     height: 100%;
+    position: relative;
 }
 #details-info-main-img>img{
     max-width: 100%;
@@ -168,14 +171,10 @@
     height: 23px;
     border-radius: 50%;
 }
-
-
-
-
 #color-selector-main{
     position: absolute;
-    bottom: 0px;
-    left: 40%;
+    bottom: 25%;
+    right: 10%;
     transform: rotate(-90deg);
 }
 #faq-cont h4{
@@ -216,4 +215,96 @@
 
 .faq-cont-que{
     cursor: pointer;
+}
+#video-add-cont{
+    position: relative;
+    top: -100px;
+    width: 85%;
+    height: 200px;
+    margin: auto;
+    border-radius: 40px;
+    background: #F9F8F9;
+    display: flex;
+    gap: 5%;
+    justify-content: space-between;
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
+#video-add-cont>div>div{
+}
+#img-div{
+    position: relative;
+}
+#video-add-cont>div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#video-add-cont img{
+    width: 150px;
+}
+.top-add-text-color{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3db6cd;
+}
+.top-add-text{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+#big-text{
+    font-size: 68px;
+    font-weight: bolder;
+    color: #3db6cd;
+
+}
+#video-add-cont>#add-one{
+    width: 35%;
+}
+#video-add-cont>#add-two{
+    width: 35%;
+}
+#video-add-cont>#add-three{
+    width: 30%;
+}
+#cont-with-timer{
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    border-radius: 40px;
+    background: #F6F6F6;
+}
+#cont-with-timer-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: skyblue;
+    width: 95%;
+    height: 60%;
+    font-size: 24px;
+}
+
+#cont-with-timer-text h1{
+    width: 350px;
+    text-align: center;
+}
+#cont-with-timer-img{
+    display: flex;
+    width: 95%;
+    height: 40%;
+    justify-content: end;
+    align-items: center;
+    gap: 20%;
+}
+#join-text-img{
+    display: flex;
+    gap: 20px;
+}
+#join-text-img p{
+    margin: 0;
+    padding: 0;
 }

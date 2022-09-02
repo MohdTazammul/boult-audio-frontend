@@ -7,16 +7,10 @@ import {useNavigate} from 'react-router-dom'
 import "./Login.css"
 import { useEffect } from 'react';
 import {signInWithPopup,auth,googleProvider,facebookProvider} from '../../Firebase/firebase';
+import PopUp from '../PopUp/PopUp';
 const Login = () => {
   const navigate=useNavigate();
   var store=useSelector(store=>store);
-  // console.log(store);
- useEffect(()=>{
-    if(store.isAuth){
-      navigate("/")
-    }
-    // navigate("/")
- },[])
   const dispatch=useDispatch();
   const [loding,setLoding]=useState(false)
   const [state, setState] = useState(true)
@@ -24,6 +18,23 @@ const Login = () => {
   const [pass, setPass] = useState("")
   const [first, setFirst] = useState("")
   const [last, setLast] = useState("")
+  const [A,setAlert]=useState({message:"",success:true})
+  useEffect(() => {
+    console.log("herer2")
+    let timeout;
+    if(A.message!=""){
+       timeout = setTimeout(() => {
+        setAlert({message:"",success:true})
+      }, 3000)
+    }
+    return () => clearTimeout(timeout)
+  }, [A.message])
+ useEffect(()=>{
+    if(store.isAuth){
+      navigate("/")
+    }
+    // navigate("/")
+ },[])
   function ValidateEmail(mail) 
     {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
@@ -34,11 +45,18 @@ const Login = () => {
     if(state){
       console.log("login fetch")
       if(email==""||pass==""){
-        alert("please fill all the inputs...");
+        // <Alert variant="outlined" severity="success">
+        //   This is a success alert — check it out!
+        // </Alert>
+        console.log("here")
+        setAlert({message:"please fill all the inputs...",success:false})
+        // return <PopUp/>
+        // alert("please fill all the inputs...");
         return;
       }
       if(!ValidateEmail(email)){
-        alert("please fill the valid email....");
+        setAlert({message:"please fill the valid email....",success:false})
+        // alert("please fill the valid email....");
         return;
       }
       setLoding(true)
@@ -55,7 +73,8 @@ const Login = () => {
             dispatch(login({token:data.token, data:data.data}));
             navigate("/")
           }else{
-            alert(data.message)
+            setAlert({message:data.message,success:false})
+            // alert(data.message)
           }
         })
 
@@ -64,11 +83,13 @@ const Login = () => {
     }else{
       console.log(email,pass,first,last)
       if(email==""||pass==""||first==""||last==""){
-        alert("please fill all the inputs...");
+        setAlert({message:"please fill all the inputs...",success:false})
+        // alert("please fill all the inputs...");
         return;
       }
       if(!ValidateEmail(email)){
-        alert("please fill the valid email....");
+        setAlert({message:"please fill the valid email....",success:false})
+        // alert("please fill the valid email....");
         return;
       }
       setLoding(true)
@@ -82,10 +103,12 @@ const Login = () => {
           console.log(d);
           setLoding(false)
           if(d.error){
-            alert(d.message)
+            setAlert({message:d.message,success:false})
+            // alert(d.message)
           }else{
             
-            alert("Registration succesfull! now you can login...")
+            setAlert({message:"Registration succesfull! now you can login...",success:false})
+            // alert("Registration succesfull! now you can login...")
             navigate("/login")
           }
           
@@ -206,9 +229,9 @@ const Login = () => {
 
       </div>
       </div>
-
     </div>}
-
+      
+    {A.message!=""&&<PopUp message={A.message} success={A.success}/>}
   </div>
   
 </div>

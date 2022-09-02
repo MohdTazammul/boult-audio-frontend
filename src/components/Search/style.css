@@ -1,0 +1,32 @@
+#search-cont{
+    width: 100%;
+    /* border: 2px solid red; */
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#search-cont>div{
+    height: 60px;
+    /* border: 2px solid red; */
+}
+#search-main{
+    width: 25%;
+    margin: auto;
+    height: 80%;
+    display: flex;
+    border-radius: 30px;
+    position: relative;
+}
+#search-main input{
+    background: #EEEEEE;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+}
+#icon-search{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
