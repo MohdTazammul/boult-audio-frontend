@@ -8,6 +8,8 @@ import { Icon } from '@iconify/react';
 import "./style.css"
 import NeackbandGrid from '../Grid/NeackbandGrid';
 import Footer from '../Footer/Footer';
+import TwsGrid from '../Grid/TwsGrid';
+import SpeakerGrid from '../Grid/SpeakerGrid';
 const Details = () => {
     const [quantity,setQuantity]=useState(1)
     const [params,setParams]=useSearchParams();
@@ -22,15 +24,15 @@ const Details = () => {
         },800)
     },[textInd])
     useEffect(()=>{
-        let prod=JSON.parse(localStorage.getItem("prod"))
-        setProduct(prod)
-        console.log(prod)
-        // const id=params.get("id");
-        // fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
-        //     // localStorage.setItem("prod",JSON.stringify(d));
-        //     setProduct(d)
-        //     // console.log(d)
-        // })
+        // let prod=JSON.parse(localStorage.getItem("prod"))
+        // setProduct(prod)
+        // console.log(prod)
+        const id=params.get("id");
+        fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
+            // localStorage.setItem("prod",JSON.stringify(d));
+            setProduct(d)
+            // console.log(d)
+        })
     },[])
     return product._id?
     (
@@ -169,7 +171,12 @@ const Details = () => {
                 </div>
             </div>
             <div>
-                <NeackbandGrid/>
+                {
+                    product.category=="TWS"?<TwsGrid/> :product.category=="Neckband"?<NeackbandGrid/>:product.category=="Speaker"?<SpeakerGrid/>:""
+                }
+                {/* <NeackbandGrid/>
+                <TwsGrid/>
+                <SpeakerGrid/> */}
             </div>
             <div id='cont-with-timer'>
                 <div id='cont-with-timer-text'>

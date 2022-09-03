@@ -4,7 +4,7 @@
     background-position: center;
 }
 
-#neacknandgrid .Cont1{
+#twsgrid .Cont1{
     display: grid;
     width: 80%;
     margin: auto;
@@ -17,25 +17,25 @@
     /* grid-template-rows: 400px; */
 
 }
-#neacknandgrid .item1{
+#twsgrid .item1{
     grid-area: a;
     margin-top: 48px;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255261-ed114201-afa6-428c-b625-24b3475a84e9.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188263596-a348a099-31c2-4f5e-bcdb-9cd018efcd6b.png");
     border-radius: 20px;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
 }
-#neacknandgrid .item2{
+#twsgrid .item2{
     grid-area: b;
     background-color: white;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255246-ed0634ee-3097-4fdc-add0-11b0d002cf19.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188263598-a7371340-50fa-4a9c-98e2-7c52d2740f27.png");
     border-radius: 20px;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
 }
-#neacknandgrid .Cont2{
+#twsgrid .Cont2{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -50,19 +50,19 @@
    
 
 }
-#neacknandgrid .item3{
+#twsgrid .item3{
     grid-area: a;
     background-color: #F3F3F3;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255267-89fbc07c-d61a-4430-9b1e-dd882c4f1d05.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188263599-4d43bd5f-db89-4d6c-abcf-e63e14d0514d.png");
     border-radius: 20px;
 }
-#neacknandgrid .item4{
+#twsgrid .item4{
     grid-area: b;
     background-color: antiquewhite;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255281-b76d11e3-73ea-4538-b590-1fbcfdf8538f.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188263604-9b1d4c02-1cef-419f-81a2-36f53003050f.png");
     border-radius: 20px;
 }
-#neacknandgrid .Cont3{
+#twsgrid .Cont3{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -75,41 +75,41 @@
     grid-template-columns: auto auto;
     /* grid-template-rows: 400px; */
 }
-#neacknandgrid .item5{
+#twsgrid .item5{
     grid-area: a;
     background-color: aquamarine;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255583-f2bf3420-3515-42c7-9c2f-1273701d6d4f.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264061-fcdfe1e2-a70e-40d3-95fa-d0289856272f.png");
     border-radius: 20px;
 }
-#neacknandgrid .item6{
+#twsgrid .item6{
     grid-area: b;
     background-color: antiquewhite;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255584-27a32c43-eae0-4328-b3ab-58c574bb4add.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264062-ddf60a9a-7e42-44be-960d-9a8925155d04.png");
     border-radius: 20px;
 }
-#neacknandgrid .item7{
+#twsgrid .item7{
     grid-area: c;
     background-color: rgb(80, 141, 37);
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255588-6ad17d84-5e7d-45f2-b963-49b3f7422676.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264064-a10d720b-4cca-461b-85e3-1f69cf0111ed.png");
     border-radius: 20px;
 }
-#neacknandgrid .item8{
+#twsgrid .item8{
     grid-area: d;
     background-color: rgb(196, 193, 17);
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255590-36c75515-0eee-4f1f-86d3-d6b49a879a47.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264059-6c2c9200-b854-4582-b541-3fe0dc9e8949.png");
     border-radius: 20px;
 }
-#neacknandgrid .bigImg{
+#twsgrid .bigImg{
     width: 100%;
     height: 600px;
     margin-top: 10px;
     background-color: white;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255793-f14e9fdc-e962-423e-ae92-afaeb407a3b6.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264176-91fc1d67-fefc-41d5-bf0b-7d5128b91a67.png");
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
 }
-#neacknandgrid .Cont4{
+#twsgrid .Cont4{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -121,19 +121,19 @@
     grid-template-columns: auto auto;
     /* grid-template-rows: 400px; */
 }
-#neacknandgrid .item9{
+#twsgrid .item9{
     grid-area: a;
     background-color: white;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188256053-5550c926-01dc-4dfe-8f59-2ac33b89ba46.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264379-59aa8307-5374-4817-9add-7efc066af510.png");
     border-radius: 20px 0 0 20px;
 }
-#neacknandgrid .item10{
+#twsgrid .item10{
     grid-area: b;
     background-color: antiquewhite;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255857-90218c3c-40ef-4219-aeb6-d1dd664ea6dd.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264578-2be0ef95-1502-41dc-9e48-31ac316bc30b.png");
     border-radius: 0 20px 20px 0;
 }
-#neacknandgrid .Cont5{
+#twsgrid .Cont5{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -148,14 +148,14 @@
    
 
 }
-#neacknandgrid .item11{
+#twsgrid .item11{
     grid-area: a;
     background-color: rgb(133, 160, 64);
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255882-3b1ac72b-6ad5-4179-8688-ce5cdd58a204.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264383-db797c8e-2b0d-4136-a23b-390d369f3e77.png");
     border-radius: 20px;
 }
-#neacknandgrid .item12{
+#twsgrid .item12{
     grid-area: b;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255797-db91e697-f6e2-470d-8cc3-9d20a3477501.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264381-7ace39ca-6d04-41f3-a0fa-ec92337bb2b9.png");
     border-radius: 20px;
 }

@@ -1,8 +1,8 @@
-import React from 'react'
-import "./NeackbandGrid.css"
-const NeackbandGrid = () => {
-  return (
-    <div id='neacknandgrid'>
+import React from 'react';
+import "./speakergrid.css"
+const SpeakerGrid = () => {
+    return (
+        <div id='speakergrid'>
         <div>
             <div className='Cont1'>
                 <div className='item1'></div>
@@ -17,21 +17,14 @@ const NeackbandGrid = () => {
                 <div className='item6'></div>
                 <div className='item7'></div>
                 <div className='item8'></div>
-            </div>
-            <div className='bigImg'>
-                {/* <img src="https://user-images.githubusercontent.com/93372275/188255793-f14e9fdc-e962-423e-ae92-afaeb407a3b6.png" alt="" /> */}
-            </div>
-            <div className='Cont4'>
-                <div className='item9'></div>
-                <div className='item10'></div>
-            </div>
+            </div>          
             <div className='Cont5'>
                 <div className='item11'></div>
                 <div className='item12'></div>
             </div>
         </div>
     </div>
-  )
-}
+    );
+};
 
-export default NeackbandGrid
+export default SpeakerGrid;

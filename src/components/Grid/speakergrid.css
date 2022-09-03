@@ -4,7 +4,7 @@
     background-position: center;
 }
 
-#neacknandgrid .Cont1{
+#speakergrid .Cont1{
     display: grid;
     width: 80%;
     margin: auto;
@@ -17,25 +17,25 @@
     /* grid-template-rows: 400px; */
 
 }
-#neacknandgrid .item1{
+#speakergrid .item1{
     grid-area: a;
     margin-top: 48px;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255261-ed114201-afa6-428c-b625-24b3475a84e9.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264818-277a2d7d-ff37-4e15-9554-c871f5063d3a.png");
     border-radius: 20px;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
 }
-#neacknandgrid .item2{
+#speakergrid .item2{
     grid-area: b;
     background-color: white;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255246-ed0634ee-3097-4fdc-add0-11b0d002cf19.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264820-a7bab455-df1f-42e5-8ad7-662cd3ce6588.png");
     border-radius: 20px;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
 }
-#neacknandgrid .Cont2{
+#speakergrid .Cont2{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -50,19 +50,19 @@
    
 
 }
-#neacknandgrid .item3{
+#speakergrid .item3{
     grid-area: a;
     background-color: #F3F3F3;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255267-89fbc07c-d61a-4430-9b1e-dd882c4f1d05.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264822-e50d260f-2c08-4830-a894-a62757b4b56f.png");
     border-radius: 20px;
 }
-#neacknandgrid .item4{
+#speakergrid .item4{
     grid-area: b;
     background-color: antiquewhite;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255281-b76d11e3-73ea-4538-b590-1fbcfdf8538f.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188264831-ccf06f39-73ec-4ca6-9b21-7a36b5da1f86.png");
     border-radius: 20px;
 }
-#neacknandgrid .Cont3{
+#speakergrid .Cont3{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -75,31 +75,31 @@
     grid-template-columns: auto auto;
     /* grid-template-rows: 400px; */
 }
-#neacknandgrid .item5{
+#speakergrid .item5{
     grid-area: a;
     background-color: aquamarine;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255583-f2bf3420-3515-42c7-9c2f-1273701d6d4f.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188265390-c732a3a3-b7a7-45de-914a-54245f63aa54.png");
     border-radius: 20px;
 }
-#neacknandgrid .item6{
+#speakergrid .item6{
     grid-area: b;
     background-color: antiquewhite;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255584-27a32c43-eae0-4328-b3ab-58c574bb4add.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188265388-1a8d36f9-37de-479a-9c91-781cd37e51a9.png");
     border-radius: 20px;
 }
-#neacknandgrid .item7{
+#speakergrid .item7{
     grid-area: c;
     background-color: rgb(80, 141, 37);
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255588-6ad17d84-5e7d-45f2-b963-49b3f7422676.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188265385-e9caa054-0a45-4150-8b6f-965465ae621d.png");
     border-radius: 20px;
 }
-#neacknandgrid .item8{
+#speakergrid .item8{
     grid-area: d;
     background-color: rgb(196, 193, 17);
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255590-36c75515-0eee-4f1f-86d3-d6b49a879a47.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188265382-1fbd0a6b-33a7-4bc0-8e14-3cc872924927.png");
     border-radius: 20px;
 }
-#neacknandgrid .bigImg{
+#speakergrid .bigImg{
     width: 100%;
     height: 600px;
     margin-top: 10px;
@@ -109,7 +109,7 @@
     background-size:cover;
     background-position: center;
 }
-#neacknandgrid .Cont4{
+#speakergrid .Cont4{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -121,19 +121,19 @@
     grid-template-columns: auto auto;
     /* grid-template-rows: 400px; */
 }
-#neacknandgrid .item9{
+#speakergrid .item9{
     grid-area: a;
     background-color: white;
     background-image: url("https://user-images.githubusercontent.com/93372275/188256053-5550c926-01dc-4dfe-8f59-2ac33b89ba46.png");
     border-radius: 20px 0 0 20px;
 }
-#neacknandgrid .item10{
+#speakergrid .item10{
     grid-area: b;
     background-color: antiquewhite;
     background-image: url("https://user-images.githubusercontent.com/93372275/188255857-90218c3c-40ef-4219-aeb6-d1dd664ea6dd.png");
     border-radius: 0 20px 20px 0;
 }
-#neacknandgrid .Cont5{
+#speakergrid .Cont5{
     padding-top: 10px;
     display: grid;
     width: 80%;
@@ -148,14 +148,14 @@
    
 
 }
-#neacknandgrid .item11{
+#speakergrid .item11{
     grid-area: a;
     background-color: rgb(133, 160, 64);
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255882-3b1ac72b-6ad5-4179-8688-ce5cdd58a204.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188265177-01a13d9f-0940-46f8-bbad-8e3395d1f288.png");
     border-radius: 20px;
 }
-#neacknandgrid .item12{
+#speakergrid .item12{
     grid-area: b;
-    background-image: url("https://user-images.githubusercontent.com/93372275/188255797-db91e697-f6e2-470d-8cc3-9d20a3477501.png");
+    background-image: url("https://user-images.githubusercontent.com/93372275/188265183-6e4dbe25-e814-4219-bb8a-b304bf9c55ad.png");
     border-radius: 20px;
 }
