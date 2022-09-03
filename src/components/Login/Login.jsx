@@ -8,6 +8,7 @@ import "./Login.css"
 import { useEffect } from 'react';
 import {signInWithPopup,auth,googleProvider,facebookProvider} from '../../Firebase/firebase';
 import PopUp from '../PopUp/PopUp';
+import API from '../../utills/API';
 const Login = () => {
   const navigate=useNavigate();
   var store=useSelector(store=>store);
@@ -60,7 +61,7 @@ const Login = () => {
         return;
       }
       setLoding(true)
-        fetch(`https://boult-temp.herokuapp.com/account/login`,{
+        fetch(`${API}/account/login`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -93,7 +94,7 @@ const Login = () => {
         return;
       }
       setLoding(true)
-      fetch(`https://boult-temp.herokuapp.com/account/register`,{
+      fetch(`${API}/account/register`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -143,7 +144,7 @@ const Login = () => {
         signInWithPopup(auth, googleProvider).then(resp=>{
           console.log(resp)
           setLoding(true)
-        fetch(`https://boult-temp.herokuapp.com/account/login`,{
+        fetch(`${API}/account/login`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -194,7 +195,7 @@ const Login = () => {
         signInWithPopup(auth, googleProvider).then(resp=>{
           console.log(resp)
         setLoding(true)
-      fetch(`https://boult-temp.herokuapp.com/account/register`,{
+      fetch(`${API}/account/register`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
