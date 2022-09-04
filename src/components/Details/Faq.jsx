@@ -2,12 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import './style.css'
-const Faq = ({que,ans}) => {
+const Faq = ({name,que,ans}) => {
     const [index,setIndex]=useState([])
     return (
         <>
             <div>
-                <h1>Y1 FAQs</h1>
+                <h1>{name} FAQs</h1>
                 <hr />
                    {
                     que.map((el,i)=>(

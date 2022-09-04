@@ -24,15 +24,15 @@ const Details = () => {
         },800)
     },[textInd])
     useEffect(()=>{
-        // let prod=JSON.parse(localStorage.getItem("prod"))
-        // setProduct(prod)
-        // console.log(prod)
-        const id=params.get("id");
-        fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
-            // localStorage.setItem("prod",JSON.stringify(d));
-            setProduct(d)
-            // console.log(d)
-        })
+        let prod=JSON.parse(localStorage.getItem("prod"))
+        setProduct(prod)
+        console.log(prod)
+        // const id=params.get("id");
+        // fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
+        //     // localStorage.setItem("prod",JSON.stringify(d));
+        //     setProduct(d)
+        //     // console.log(d)
+        // })
     },[])
     return product._id?
     (
@@ -76,7 +76,7 @@ const Details = () => {
                                     }
                                 </div>
                                 <div id='details-name'>
-                                    <h2>{product.title}</h2>
+                                    <h1><span style={{fontWeight:"lighter"}}>{product.title}</span><span>{product.productModel}</span></h1>
                                 </div>
                                 <div id='price-qnt'>
                                     <div>
@@ -115,7 +115,7 @@ const Details = () => {
                                             alert(d.message)
                                         })
                                     }}>Add To Cart</button>
-                                    <button style={{background:"#3db6cd",color:"white"}}>Buy Now</button>
+                                    <button style={{background: "rgb(69,189,212)",background: "linear-gradient(90deg, rgba(69,189,212,1) 0%, rgba(17,135,158,1) 100%)",color:"white"}}>Buy Now</button>
                                 </div>
                                <div>
                                     <div id='detail-visa'>
@@ -203,7 +203,7 @@ const Details = () => {
                 </div>
             </div>
            <div id='faq-cont'>
-            <Faq que={product.FAQ_Ques} ans={product.FAQ_Ans}/>
+            <Faq name={product.productModel} que={product.FAQ_Ques} ans={product.FAQ_Ans}/>
            </div>
           <Footer/>
         </>

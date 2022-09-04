@@ -10,7 +10,7 @@ export default function Footer() {
           <div id='first-one'>
             <h2 id='top-one'>We won't spam you.</h2>
             <p style={{color:"#121212BF"}}>but for every mail we send, get a</p>
-            <h2><span style={{color:'#45BED5'}}>Deal</span> with it</h2>
+            <h2><span id='deal-footer'>Deal</span> with it</h2>
           </div>
           <div id='first-two'>
             <TextField style={{width:"90%",marginLeft:"6%",paddingLeft:"0px"}} id="outlined-basic" label="Email" variant="standard" />
@@ -20,7 +20,7 @@ export default function Footer() {
       </div>
       <div id='second'>
         <div>
-          <h4 style={{color:"#45BED5"}}>Explore by category</h4>
+          <h4 className="deal-side-footer" >Explore by category</h4>
           <p>True Wireless</p>
           <p>Neckband</p>
           <p>Headphones</p>
@@ -29,7 +29,7 @@ export default function Footer() {
           <p>Smart Watches</p>
         </div>
         <div>
-          <h4 style={{color:"#45BED5"}}>Explore by activity</h4>
+          <h4 className="deal-side-footer" >Explore by activity</h4>
           <p>Workout</p>
           <p>Work</p>
           <p>Headphones</p>
@@ -37,31 +37,31 @@ export default function Footer() {
           <p>Audiophile</p>
         </div>
         <div>
-          <h4 style={{color:"#45BED5"}}> Support</h4>
+          <h4 className="deal-side-footer" > Support</h4>
           <p>Track your order</p>
           <p>Warranty Registration</p>
           <p>Raise / Track complaints</p>
         </div>
         <div>
-          <h4 style={{color:"#45BED5"}}>Company</h4>
+          <h4 className="deal-side-footer" >Company</h4>
           <p>About Us</p>
           <p>Careers</p>
           <p>Why buy from Boultaudio.com</p>
         </div>
         <div>
-          <h4 style={{color:"#45BED5"}}>Profile</h4>
+          <h4 className="deal-side-footer" >Profile</h4>
           <p>Login</p>
           <p>My account</p>
         </div>
         <div>
-          <h4 style={{color:"#45BED5"}}>Contact us</h4>
+          <h4 className="deal-side-footer" >Contact us</h4>
           <p>Whatsapp us</p>
           <p>Call us</p>
           <p>Email us</p>
           <p>Service Centers</p>
         </div>
         <div>
-          <h4 style={{color:"#45BED5"}}>Bulk Order</h4>
+          <h4 className="deal-side-footer" >Bulk Order</h4>
         </div>
       </div>
     </div>

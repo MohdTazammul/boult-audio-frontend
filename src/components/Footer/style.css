@@ -69,6 +69,18 @@
     line-height: 1;
     font-size: 17px;
 }
+#deal-footer{
+    background: rgb(69,189,212);
+    background: linear-gradient(90deg, rgba(69,189,212,1) 0%, rgba(17,135,158,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.deal-side-footer{
+    background: rgb(69,189,212);
+    background: linear-gradient(90deg, rgba(69,189,212,1) 0%, rgba(17,135,158,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 #icon-grid{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
