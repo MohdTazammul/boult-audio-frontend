@@ -23,7 +23,7 @@ const Login = () => {
   useEffect(() => {
     console.log("herer2")
     let timeout;
-    if(A.message!=""){
+    if(A.message!==""){
        timeout = setTimeout(() => {
         setAlert({message:"",success:true})
       }, 3000)
@@ -45,7 +45,7 @@ const Login = () => {
   async function handleSubmit(){
     if(state){
       console.log("login fetch")
-      if(email==""||pass==""){
+      if(email===""||pass===""){
         // <Alert variant="outlined" severity="success">
         //   This is a success alert — check it out!
         // </Alert>
@@ -118,11 +118,11 @@ const Login = () => {
   }
   return loding?<div style={{display:"flex",justifyContent:"center",alignItems:"center"}}><img style={{width:"100px"}} src="https://i.stack.imgur.com/kOnzy.gif" alt="" /></div>: <div>
   <div className='login-container'>
-      <div className='login-text'><p id='Log' onClick={()=>{
+      <div className='login-text'><p id='Log' className={state? "textBG" : ""} onClick={()=>{
         setState(true)
       }}>Login</p> <p onClick={()=>{
         setState(false)
-      }} id='Sign'>Sign Up</p></div>
+      }} id='Sign'className={!state? "textBG" : ""}>Sign Up</p></div>
     { state ? <div id='loginCont'>
       <input value={email} onChange={(e)=>{
         setEmail(e.target.value)
@@ -185,7 +185,7 @@ const Login = () => {
         .then(res=>{
             console.log(res)
         }).catch(err=>{
-          alert("please try with diifrent methode")
+          alert("please try with diifrent method")
         })
       }}  id='fIcon'>Facebook Login<FontAwesomeIcon className='Ficon' icon={faFacebookF}></FontAwesomeIcon></span> 
       <span onClick={()=>{
@@ -232,7 +232,7 @@ const Login = () => {
       </div>
     </div>}
       
-    {A.message!=""&&<PopUp message={A.message} success={A.success}/>}
+    {A.message!==""&&<PopUp message={A.message} success={A.success}/>}
   </div>
   
 </div>
