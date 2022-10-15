@@ -24,15 +24,15 @@ const Details = () => {
         },800)
     },[textInd])
     useEffect(()=>{
-        let prod=JSON.parse(localStorage.getItem("prod"))
-        setProduct(prod)
-        console.log(prod)
-        // const id=params.get("id");
-        // fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
-        //     // localStorage.setItem("prod",JSON.stringify(d));
-        //     setProduct(d)
-        //     // console.log(d)
-        // })
+        // let prod=JSON.parse(localStorage.getItem("prod"))
+        // setProduct(prod)
+        // console.log(prod)
+        const id=params.get("id");
+        fetch(`https://boult.herokuapp.com/product/details/${id}`).then(res=>res.json()).then(d=>{
+            // localStorage.setItem("prod",JSON.stringify(d));
+            setProduct(d)
+            // console.log(d)
+        })
     },[])
     return product._id?
     (
