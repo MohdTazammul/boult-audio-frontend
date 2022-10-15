@@ -160,8 +160,8 @@ console.log(API)
               cartData.length == 0 ? <h1 style={{textAlign:"center"}}>Your cart is empty</h1>:
               cartData.map((el,i)=>{
                 return (
-                  <div key={i} className='cart-product-row' onClick={()=>navigate(`/details?id=${el.product._id}`)}>
-                    <div style={{backgroundImage:`url(${el.product.image[el.product.colorName.indexOf(el.color)]})`}}>
+                  <div key={i} className='cart-product-row' >
+                    <div onClick={()=>navigate(`/details?id=${el.product._id}`)} style={{backgroundImage:`url(${el.product.image[el.product.colorName.indexOf(el.color)]})`}}>
                     </div>
                     <div>
                       <div>
@@ -185,7 +185,19 @@ console.log(API)
                     </div>
                     <div>
                       <div className='bold'>Rs. {(el.product.discountedPrice).toLocaleString(undefined,{ minimumFractionDigits: 2 })}</div>
-                      <div>
+                      <div onClick={()=>{
+                        setCartLoading(true);
+                        fetch(API+`/cart/${el._id}`, {method:"delete"}).then((data)=>{
+                          setCartData(pre => {
+                            var updatedArray = pre.splice(i, 1);
+                            console.log(updatedArray, pre);
+                            setSubtotal(pre=>pre-updatedArray.discountedPrice)
+                            return pre
+                          });
+                          setCartLoading(false)
+
+                        })
+                      }}>
                         <Icon icon="ep:delete" />
                       </div>
                     </div>
