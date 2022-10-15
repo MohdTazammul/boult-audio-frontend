@@ -214,7 +214,7 @@ function Cart() {
             <div className='products-section'>
               {cartProducts.map((el, i) =>
                 <div key={i}>
-                  <div  onClick={()=>navigate(`/details?id=${el.product._id}`)} style={{backgroundImage:`url(${el.product.image[el.product.colorName.indexOf(el.color)]})`}}></div>
+                  <div  onClick={()=>navigate(`/details?id=${el.product._id}`)} style={{backgroundImage:`url(${el.product.image[el.product.colorName.indexOf(el.color)]})`, backgroundColor:"#dcdcdc"}}></div>
                 </div>
               )}
             </div>
